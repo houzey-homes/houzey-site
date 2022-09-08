@@ -11,10 +11,9 @@ function App() {
 
       <header className="App-header">
         <img src={logo} className="Home-logo" alt="logo" />
-        
       </header>
 
-      <header className="App-header">
+      <body className="App-body">
         <h1>Everyone likes a nicely decorated home... <br></br>but it's not always so easy</h1>
         <h1>"Where did I put those again?"</h1>
         <h1>"Aaaarrgghhh. So tangled, and so many broken lights!"</h1>
@@ -22,15 +21,15 @@ function App() {
         <h1>"Aaaaahh."</h1>
         <h1>"Where am I supposed to put all this stuff?"</h1>
         <h1>"Not again..."</h1>
+      </body>
+
+      <body className="App-body">
         <h1>Let our Houzey Helpers, help you.</h1>
         <h2>Use our website or app to purchase or rent decorations</h2>
         <h2>Schedule a time that works for you</h2>
         <h2>Then just wait for our Houzey Helpers to show up</h2>
         <h2>Watch our team do everything - from installation to takedown</h2>
-
-      </header>
-
-
+      </body>
 
     </div>
   );

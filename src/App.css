@@ -13,6 +13,17 @@
   color: white;
 }
 
+.App-body {
+  background-color: #5b8df1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
 .NavBar {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 15vmin);
+  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -29,7 +40,6 @@
 }
 
 .Home-logo {
-  
   height: 100%;
   width: 100%;
   pointer-events: none;
