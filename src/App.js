@@ -10,7 +10,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>
-          Testing edits via GitHub
+          Testing edits via GitHub. <br>Testing edits via VS Code.</br>
         </p>
         <a
           className="App-link"
