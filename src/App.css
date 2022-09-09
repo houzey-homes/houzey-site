@@ -48,20 +48,24 @@
   pointer-events: none;
 }
 
-/*
-.App-logo {
+.Cartoon {
+  height: 40vmin;
+  
+}
+
+.Img-rotate {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .Img-rotate {
+    animation: Img-rotate-spin infinite 20s linear;
   }
 }
 
 
-@keyframes App-logo-spin {
+@keyframes Img-rotate-spin {
   from {
     transform: rotate(0deg);
   }
@@ -69,4 +73,3 @@
     transform: rotate(360deg);
   }
 }
-*/

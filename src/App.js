@@ -1,4 +1,7 @@
 import logo from './house-logo.png';
+import cartoon1 from './cartoon1.png';
+import cartoon1v2 from './cartoon1v2.png';
+import cartoon2 from './cartoon2.png';
 import './App.css';
 
 const src =
@@ -17,8 +20,11 @@ function App() {
       </header>
 
       <body className="App-body">
-        <h1>Everyone likes a nicely decorated home... <br></br>but it's not always so easy</h1>
+        <h1>Everyone likes a nicely decorated home... <br></br>but it's not always so easy.</h1>
+        <img src={cartoon1} className="Cartoon" alt="cartoon" />
+        <img src={cartoon1v2} className="Cartoon" alt="cartoon" />
         <h1>"Where did I put those decorations again?"</h1>
+        <img src={cartoon2} className="Img-rotate" alt="cartoon" />
         <h1>"Aaaarrgghhh. So tangled, and so many broken lights!"</h1>
         <h1>"Oh boy, here we go."</h1>
         <h1>"Aaaaahh."</h1>
@@ -28,10 +34,10 @@ function App() {
 
       <body className="App-body">
         <h1>Let our Houzey Helpers, help you.</h1>
-        <h2>Use our website or app to purchase or rent decorations</h2>
-        <h2>Schedule a time that works for you</h2>
-        <h2>Then just wait for our Houzey Helpers to show up</h2>
-        <h2>Watch our team do everything - from installation to takedown</h2>
+        <h2>Use our website or app to purchase or rent decorations.</h2>
+        <h2>Schedule a time that works for you.</h2>
+        <h2>Then, just wait for our Houzey Helpers to show up.</h2>
+        <h2>Watch our team do everything - from installation to takedown.</h2>
       </body>
 
 
@@ -44,9 +50,10 @@ function App() {
       </div>
 
       <div className="App-earlysignup">
-        <h1>Interested? We bet you are!</h1>
-        <h2>We are currently fundraising! Interested investors can contact us at investors@houzey.homes
-          <br></br>Sign up below for news and early access, including exclusive decorations and discounts.</h2>
+        <h1>Interested?<br></br>We bet you are!</h1>
+        <h2>Houzey is currently fundraising!<br></br>Interested investors can contact us at investors@houzey.homes.</h2>
+        <h2>Reach out to us via contact@houzey.homes for any other comments/questions.</h2>
+        <h2>Sign up below for news and early access, including exclusive decorations and discounts.</h2>
       </div>
 
     </div>
