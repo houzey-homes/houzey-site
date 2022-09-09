@@ -50,12 +50,24 @@
 
 .Cartoon {
   height: 40vmin;
-  
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.form {
+  padding-bottom: 100px;
+}
+
+.form-control {
+  width: 100%;
+  height: 22px;
 }
 
 .Img-rotate {
   height: 40vmin;
   pointer-events: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
