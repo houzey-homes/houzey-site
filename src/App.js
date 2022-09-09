@@ -55,13 +55,13 @@ function App() {
         <h2>Reach out to us via contact@houzey.homes for any other comments/questions.</h2>
         <h2>Sign up below for news and early access, including exclusive decorations and discounts.</h2>
         <form target="_self" class="form" action="https://formsubmit.co/e899263a40b59e81fe00e813f4e1325b " method="POST">       
-              <input type="text" name="name" class="form-control" placeholder="Name" required/> 
-              <br/>
-              <input type="email" name="email" class="form-control" placeholder="Email Address" required/>
-              <br/>
-              <input type="hidden" name="_captcha" value="false"/>
-              <input type="text" name="_honey" style={{display: 'none'}}/>
-              <button type="submit" class="form-button">Submit</button>
+          <input type="text" name="name" class="form-control" placeholder="Name" required/> 
+          <br></br>
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required/>
+          <br></br>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="text" name="_honey" style={{display: 'none'}}/>
+          <button type="submit" class="form-button">Submit</button>
         </form>
       </div>
 
