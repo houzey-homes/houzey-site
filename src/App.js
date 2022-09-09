@@ -36,7 +36,7 @@ function App() {
 
 
       <div className="App-demo">
-        <h1>App Demo Video/GIF Goes Here</h1>
+        <h1>Here's what our app might look like, for starters:</h1>
         <video controls width="325px" autoPlay loop muted>
           <source src={src} type="video/mp4" />
           Sorry, your browser doesn't support embedded videos.
@@ -44,11 +44,10 @@ function App() {
       </div>
 
       <div className="App-earlysignup">
-        <h1>Sign Up Form Goes Here</h1>
+        <h1>Interested? We bet you are!</h1>
+        <h2>We are currently fundraising! Interested investors can contact us at investors@houzey.homes
+          <br></br>Sign up below for news and early access, including exclusive decorations and discounts.</h2>
       </div>
-
-
-
 
     </div>
   );
