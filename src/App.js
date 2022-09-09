@@ -2,6 +2,9 @@ import logo from './house-logo.png';
 import cartoon1 from './cartoon1.png';
 import cartoon1v2 from './cartoon1v2.png';
 import cartoon2 from './cartoon2.png';
+import cartoon3 from './cartoon3.png';
+import cartoon4 from './cartoon4.png';
+import cartoon5 from './cartoon5.png';
 import './App.css';
 
 const src =
@@ -23,11 +26,14 @@ function App() {
         <h1>Everyone likes a nicely decorated home... <br></br>but it's not always so easy.</h1>
         <img src={cartoon1} className="Cartoon" alt="cartoon" />
         <img src={cartoon1v2} className="Cartoon" alt="cartoon" />
+        <img src={cartoon2} className="Cartoon" alt="cartoon" />
         <h1>"Where did I put those decorations again?"</h1>
-        <img src={cartoon2} className="Img-rotate" alt="cartoon" />
+        <img src={cartoon3} className="Img-rotate" alt="cartoon" />
         <h1>"Aaaarrgghhh. So tangled, and so many broken lights!"</h1>
-        <h1>"Oh boy, here we go."</h1>
+        <h1>"Oh boy, up we go."</h1>
+        <img src={cartoon4} className="Cartoon" alt="cartoon" />
         <h1>"Aaaaahh."</h1>
+        <img src={cartoon5} className="Cartoon" alt="cartoon" />
         <h1>"Where am I supposed to put all this stuff?"</h1>
         <h1>"Not again..."</h1>
       </body>
