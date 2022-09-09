@@ -51,7 +51,7 @@ function App() {
 
       <div className="App-earlysignup">
         <h1>Interested?<br></br>We bet you are!</h1>
-        <h2>Houzey is currently fundraising!<br></br>Interested investors can contact us at investors@houzey.homes.</h2>
+        <h2>Houzey is currently fundraising!<br></br>Investors can contact us at investors@houzey.homes.</h2>
         <h2>Reach out to us via contact@houzey.homes for any other comments/questions.</h2>
         <h2>Sign up below for news and early access, including exclusive decorations and discounts.</h2>
         <form target="_self" class="form" action="https://formsubmit.co/e899263a40b59e81fe00e813f4e1325b " method="POST">       
