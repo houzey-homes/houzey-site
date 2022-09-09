@@ -1,6 +1,9 @@
 import logo from './house-logo.png';
 import './App.css';
 
+const src =
+  "https://user-images.githubusercontent.com/10952434/169947473-e58fc522-8305-4540-a5a6-cc84a64bccd8.mp4";
+
 function App() {
   return (
     <div className="App">
@@ -15,7 +18,7 @@ function App() {
 
       <body className="App-body">
         <h1>Everyone likes a nicely decorated home... <br></br>but it's not always so easy</h1>
-        <h1>"Where did I put those again?"</h1>
+        <h1>"Where did I put those decorations again?"</h1>
         <h1>"Aaaarrgghhh. So tangled, and so many broken lights!"</h1>
         <h1>"Oh boy, here we go."</h1>
         <h1>"Aaaaahh."</h1>
@@ -30,6 +33,22 @@ function App() {
         <h2>Then just wait for our Houzey Helpers to show up</h2>
         <h2>Watch our team do everything - from installation to takedown</h2>
       </body>
+
+
+      <div className="App-demo">
+        <h1>App Demo Video/GIF Goes Here</h1>
+        <video controls width="25%" autoPlay loop>
+          <source src={src} type="video/mp4" />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      </div>
+
+      <div className="App-earlysignup">
+        <h1>Sign Up Form Goes Here</h1>
+      </div>
+
+
+
 
     </div>
   );

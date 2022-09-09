@@ -13,9 +13,9 @@
   color: white;
 }
 
-.App-body {
+.App-body, .App-demo, .App-earlysignup {
   background-color: #5b8df1;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,8 +44,6 @@
   width: 100%;
   pointer-events: none;
 }
-
-
 
 /*
 .App-logo {
