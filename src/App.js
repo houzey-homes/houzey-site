@@ -23,7 +23,8 @@ function App() {
       </header>
 
       <body className="App-body">
-        <h1>Everyone likes a nicely decorated home... <br></br>but it's not always so easy.</h1>
+        <h1>Everyone likes a nicely decorated home... 
+          <br></br>but it's not always so easy.</h1>
         <img src={cartoon1} className="Cartoon" alt="cartoon" />
         <img src={cartoon1v2} className="Cartoon" alt="cartoon" />
         <img src={cartoon2} className="Cartoon" alt="cartoon" />
