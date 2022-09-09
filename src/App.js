@@ -61,6 +61,7 @@ function App() {
           <br></br>
           <input type="hidden" name="_captcha" value="false"/>
           <input type="text" name="_honey" style={{display: 'none'}}/>
+          <input type="hidden" name="_next" value="https://houzey.homes"/>
           <button type="submit" class="form-button">Submit</button>
         </form>
       </div>
