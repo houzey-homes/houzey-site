@@ -27,15 +27,9 @@ function App() {
         <img src={cartoon1} className="Cartoon" alt="cartoon" />
         <img src={cartoon1v2} className="Cartoon" alt="cartoon" />
         <img src={cartoon2} className="Cartoon" alt="cartoon" />
-        <h1>"Where did I put those decorations again?"</h1>
         <img src={cartoon3} className="Img-rotate" alt="cartoon" />
-        <h1>"Aaaarrgghhh. So tangled, and so many broken lights!"</h1>
-        <h1>"Oh boy, up we go."</h1>
         <img src={cartoon4} className="Cartoon" alt="cartoon" />
-        <h1>"Aaaaahh."</h1>
         <img src={cartoon5} className="Cartoon" alt="cartoon" />
-        <h1>"Where am I supposed to put all this stuff?"</h1>
-        <h1>"Not again..."</h1>
       </body>
 
       <body className="App-body">
