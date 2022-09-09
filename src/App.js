@@ -37,7 +37,7 @@ function App() {
 
       <div className="App-demo">
         <h1>App Demo Video/GIF Goes Here</h1>
-        <video controls width="25%" autoPlay loop>
+        <video controls width="325px" autoPlay loop>
           <source src={src} type="video/mp4" />
           Sorry, your browser doesn't support embedded videos.
         </video>
