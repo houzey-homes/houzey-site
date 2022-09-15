@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
 
-      <div className="NavBar">
+      <div className="NameBar">
         <h1>Houzey</h1>
       </div>
 
@@ -73,16 +73,3 @@ function App() {
 
 export default App;
 
-/*
-<p>
-          Testing edits via GitHub. Testing edits via VS Code.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-*/

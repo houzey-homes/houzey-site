@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.Nav {
+  text-align: center;
+  background-color: #5b8df1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #282c34;
+  font-family: Pacifico;
+  /*font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;*/
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.TextLogo {
+  padding-left: 1vmin;
+}
+
+.TextLogo:hover {
+  color: white;
+}
+
+.NavLogo {
+  padding: 1vmin;
+  height: 77px;
+  width: 77px;
+  right: 20px;
+}
+
+.NavLogo:hover {
+  background-color: white;
+}
