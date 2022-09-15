@@ -1,4 +1,4 @@
-import logo from '/root/amplifyapp/src/trimmedhouse-logo.png';
+import logo from './trimmedhouse-logo.png';
 import './Nav.css';
 
 function Nav() {
