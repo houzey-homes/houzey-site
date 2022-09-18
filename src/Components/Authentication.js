@@ -12,9 +12,11 @@ export default function Authentication() {
     <Authenticator>
       {({ signOut, user }) => (
         <main>
-          <h1>Hello {user.username}</h1>
-          <h1>Well, you're here early! Thanks! <br></br>Stay tuned for our launch on October 1st.</h1>
-          <button onClick={signOut}>Sign out</button>
+          <div className="AuthenticationForm">
+            <h1>Hello {user.email}!</h1>
+            <h1>You're here early! Thanks! Expect more features soon.<br></br>Stay tuned for our launch on October 1st, 2022.</h1>
+            <button onClick={signOut}>Sign out</button>
+          </div>
         </main>
       )}
     </Authenticator>
