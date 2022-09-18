@@ -6,13 +6,12 @@ import cartoon2 from '../Images/cartoon2.png';
 import cartoon3 from '../Images/cartoon3.png';
 import cartoon4 from '../Images/cartoon4.png';
 import cartoon5 from '../Images/cartoon5.png';
-
-const src =
-  "https://user-images.githubusercontent.com/10952434/169947473-e58fc522-8305-4540-a5a6-cc84a64bccd8.mp4";
+import Nav from '../Components/Nav'
 
 function Home () {
     return (
         <main>
+        <Nav />
         <div className="App">
 
             <div className="NameBar">

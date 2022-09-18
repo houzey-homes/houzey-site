@@ -1,17 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+.PageHeader {
+    text-align: center;
+    color: white;
+}
+
+.HomeownerPage {
+    background-color: #282c34;
+}
+
 .Nav {
   text-align: center;
   background-color: #5b8df1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #282c34;
-  font-family: Pacifico;
-  /*font-size: calc(10px + 2vmin);
+  color: white;
+  /*color: #282c34;
+  font-size: calc(10px + 2vmin);
   min-height: 100vh;
   display: flex;
   flex-direction: column;*/
+}
+
+.NavLink1 {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: white;
+    background-color:hotpink;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Nav1:hover {
+    text-decoration: none;
+    color: hotpink;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: hotpink;
+    background-color:rgb(169, 219, 248);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.NavLink2 {
+    text-decoration: none;
+    color: hotpink;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: hotpink;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Nav1:hover, #Nav2:hover {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: white;
+    background-color:rgb(169, 219, 248);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .App-link {
@@ -20,10 +85,11 @@
 
 .TextLogo {
   padding-left: 1vmin;
+  font-family: Pacifico;
 }
 
 .TextLogo:hover {
-  color: white;
+  color: hotpink;
 }
 
 .NavLogo {
@@ -34,7 +100,7 @@
 }
 
 .NavLogo:hover {
-  background-color: white;
+  background-color: hotpink;
 }
 
 .App {

@@ -9,10 +9,9 @@ function Nav() {
       <h1 className="TextLogo">Houzey</h1>
 
       <nav>
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/SignIn" className="nav-link">SignIn</Link>
-            <Link to="/SignUp" className="nav-link">Sign Up</Link>
-        </nav>
+            <Link to="/Homeowner" id="Nav1" className="NavLink1">SIGN IN</Link>
+            <Link to="/Homeowner" id="Nav2" className="NavLink2">SIGN UP</Link>
+      </nav>
 
       <img src={logo} className="NavLogo" alt="logo" />
 
