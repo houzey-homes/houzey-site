@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .PageHeader {
+    padding-top: 10vh;
     text-align: center;
     color: white;
 }
 
 .HomeownerPage {
     background-color: #282c34;
+}
+
+.HomeownerBody {
+    padding-bottom: 20vh;
 }
 
 .Nav {
@@ -21,6 +26,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;*/
+}
+
+.NavLink0 {
+    text-decoration: none;
+    color: white;
 }
 
 .NavLink1 {
@@ -118,7 +128,7 @@
   color: white;
 }
 
-.App-body, .App-demo, .App-earlysignup {
+.App-body, .App-demo {
   background-color: #5b8df1;
   min-height: 50vh;
   display: flex;
@@ -127,6 +137,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Footer {
+    border-top: #61dafb;
+    border-width: 2vh;
+    border-left: 0ch;
+    border-right: 0ch;
+    border-bottom: 0ch;
+    border-style: solid;
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .NameBar {

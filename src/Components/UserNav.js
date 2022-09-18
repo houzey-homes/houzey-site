@@ -1,13 +1,16 @@
 import logo from './trimmedhouse-logo.png';
 import '../Styles/main.css';
+import {Link} from 'react-router-dom';
 
 function UserNav() {
   return (
     <div className="Nav">
 
-      <h1 className="TextLogo">Houzey</h1>
+      <Link to="/" id="Nav0" className="NavLink0"><h1 className="TextLogo">Houzey</h1></Link>
 
-      <img src={logo} className="NavLogo" alt="logo" />
+      <Link to="/" id="Nav0" className="NavLink0"><img src={logo} className="NavLogo" alt="logo" /></Link>
+
+      
 
     </div>
   );

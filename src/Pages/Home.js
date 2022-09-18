@@ -7,6 +7,7 @@ import cartoon3 from '../Images/cartoon3.png';
 import cartoon4 from '../Images/cartoon4.png';
 import cartoon5 from '../Images/cartoon5.png';
 import Nav from '../Components/Nav'
+import Footer from '../Components/Footer'
 
 function Home () {
     return (
@@ -41,11 +42,7 @@ function Home () {
             <h2>Watch our team do everything - from installation to takedown.</h2>
             </body>
 
-            <div className="App-earlysignup">
-            <h1>Interested?<br></br>We bet you are!</h1>
-            <h2>Houzey is currently fundraising!<br></br>Investors can contact us at investors@houzey.homes.</h2>
-            <h2>Reach out to us via contact@houzey.homes for any other comments/questions.</h2>                  
-            </div>
+            <Footer />
 
         </div>
         </main>
