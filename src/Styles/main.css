@@ -15,11 +15,17 @@
 }
 
 .AuthenticationForm {
-    color: white;
+    color: #61dafb;
     text-align: center;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 5vh;
+}
+
+.signoutButton {
+    color: white;
+    background-color: #61dafb;
 }
 
 .Nav {

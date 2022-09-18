@@ -13,9 +13,9 @@ export default function Authentication() {
       {({ signOut, user }) => (
         <main>
           <div className="AuthenticationForm">
-            <h1>Hello {user.email}!</h1>
-            <h1>You're here early! Thanks! Expect more features soon.<br></br>Stay tuned for our launch on October 1st, 2022.</h1>
-            <button onClick={signOut}>Sign out</button>
+            <h1>Welcome to Houzey!</h1>
+            <h1>You're here early! Thanks! Expect more features soon.<br></br>Stay tuned for news about our launch on October 1st, 2022.</h1>
+            <button className="signoutButton" onClick={signOut}>SIGN OUT</button>
           </div>
         </main>
       )}
