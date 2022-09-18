@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.PageHeader {
+    padding-top: 10vh;
+    text-align: center;
+    color: white;
+}
+
+.HomeownerPage {
+    background-color: #282c34;
+}
+
+.HomeownerBody {
+    padding-bottom: 20vh;
+}
+
+.Nav {
+  text-align: center;
+  background-color: #5b8df1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  /*color: #282c34;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;*/
+}
+
+.NavLink0 {
+    text-decoration: none;
+    color: white;
+}
+
+.NavLink1 {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: white;
+    background-color:hotpink;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Nav1:hover {
+    text-decoration: none;
+    color: hotpink;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: hotpink;
+    background-color:rgb(169, 219, 248);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.NavLink2 {
+    text-decoration: none;
+    color: hotpink;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: hotpink;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Nav1:hover, #Nav2:hover {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    font-size: calc(7px + 2vmin);
+    border-style: double;
+    border-width: 7px;
+    border-radius: 10px;
+    border-color: white;
+    background-color:rgb(169, 219, 248);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.TextLogo {
+  padding-left: 1vmin;
+  font-family: Pacifico;
+}
+
+.TextLogo:hover {
+  color: hotpink;
+}
+
+.NavLogo {
+  padding: 1vmin;
+  height: 77px;
+  width: 77px;
+  right: 20px;
+}
+
+.NavLogo:hover {
+  background-color: hotpink;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #5b8df1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-body, .App-demo {
+  background-color: #5b8df1;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Footer {
+    border-top: #61dafb;
+    border-width: 2vh;
+    border-left: 0ch;
+    border-right: 0ch;
+    border-bottom: 0ch;
+    border-style: solid;
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.NameBar {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 10vmin);
+  color: white;
+  font-family: Pacifico;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Home-logo {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.Cartoon {
+  height: 40vmin;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.form {
+  padding-bottom: 100px;
+}
+
+.form-control {
+  width: 100%;
+  height: 22px;
+}
+
+.Img-rotate {
+  height: 40vmin;
+  pointer-events: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Img-rotate {
+    animation: Img-rotate-spin infinite 20s linear;
+  }
+}
+
+
+@keyframes Img-rotate-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
