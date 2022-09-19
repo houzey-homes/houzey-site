@@ -1,7 +1,7 @@
 import './Styles/main.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home'; 
-import Homeowner from './Pages/Homeowner'; 
+import Home from './Pages/LandingPage'; 
+import Homeowner from './Pages/HomeownerLogin'; 
 import PageNotFound404 from './Pages/PageNotFound404'; 
 
 function App() {
