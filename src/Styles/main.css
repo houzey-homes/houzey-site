@@ -155,12 +155,7 @@
 }
 
 .Footer {
-    border-top: #61dafb;
-    border-width: 10vh;
-    border-left: 0ch;
-    border-right: 0ch;
-    border-bottom: 0ch;
-    border-style: solid;
+    border-top: 7vh solid #61dafb;
     background-color: #282c34;
     color: white;
     display: flex;
