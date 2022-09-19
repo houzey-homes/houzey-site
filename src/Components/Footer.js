@@ -1,4 +1,4 @@
-import logo from './trimmedhouse-logo.png';
+import logo from '../Images/trimmedhouse-logo.png';
 import '../Styles/main.css';
 import {Link} from 'react-router-dom';
   
