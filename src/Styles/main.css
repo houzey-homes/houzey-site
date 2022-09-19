@@ -121,7 +121,6 @@
   padding: 1vmin;
   height: 77px;
   width: 77px;
-  right: 20px;
 }
 
 .NavLogo:hover {
@@ -215,12 +214,20 @@
   padding-bottom: 50px;
 }
 
+@media only screen and (max-width: 320px) {
+  .Nav {
+    flex-direction: column;
+  }
+  .NavLinks {
+    margin-bottom: 15px;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .Img-rotate {
     animation: Img-rotate-spin infinite 20s linear;
   }
 }
-
 
 @keyframes Img-rotate-spin {
   from {
