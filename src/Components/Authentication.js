@@ -14,12 +14,16 @@ export default function Authentication() {
       {({ signOut, user }) => (
         <main>
           <div className="AuthenticationForm">
-            <h1>Welcome to Houzey!</h1>
-            <h1>You're here early! Thanks! Expect more features soon.<br></br>Stay tuned for news about our launch on October 1st, 2022.</h1>
 
+            <div className="SignInGreeting">
+              <h1>Welcome to Houzey!</h1>
+              <h1>You're here early! Thanks! Expect more features soon.<br></br>Stay tuned for news about our launch on October 1st, 2022.</h1>
+            </div>
+        
             <HomeownerHome />
 
-            <button className="signoutButton" onClick={signOut}>SIGN OUT</button>
+            <button className="Button" onClick={signOut}>SIGN OUT</button>
+            
           </div>
         </main>
       )}

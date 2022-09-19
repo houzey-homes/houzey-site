@@ -8,7 +8,7 @@ function Homeowner () {
         <main>
             <div className="HomeownerPage">
                 <UserNav />
-                <h1 className="PageHeader">Homeowner Login</h1>
+                <h1 className="PageHeader">Homeowner Menu</h1>
                 <div className="HomeownerBody">
                     <Authentication />
                 </div>

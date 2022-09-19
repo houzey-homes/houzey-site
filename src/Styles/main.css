@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .PageHeader {
-    padding-top: 10vh;
+    padding-top: 7vh;
     text-align: center;
     color: white;
 }
@@ -11,7 +11,7 @@
 }
 
 .HomeownerBody {
-    padding-bottom: 20vh;
+
 }
 
 .AuthenticationForm {
@@ -20,12 +20,25 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 5vh;
+    padding-top: 3vh;
 }
 
-.signoutButton {
+.SignInGreeting {
+  padding-bottom: 4vh;
+}
+
+.Button {
     color: white;
     background-color: #61dafb;
+    margin: 15px;
+    padding: 5px;
+    text-decoration: none;
+    border: solid;
+    border-color: white;
+}
+
+.HomeownerHomeContent {
+    padding-bottom: 15vh;
 }
 
 .Nav {
@@ -165,7 +178,7 @@
 }
 
 .Footer {
-    border-top: 7vh solid #61dafb;
+    border-top: 20vh solid #61dafb;
     background-color: #282c34;
     color: white;
     display: flex;

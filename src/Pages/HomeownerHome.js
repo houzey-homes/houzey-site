@@ -5,7 +5,7 @@ function HomeownerHome () {
     return (
         <main>
             <div className="HomeownerHomeContent"> 
-                <Link to="/Browsing" className="signoutButton">Browse Decorations</Link>                         
+                <Link to="/Browsing" className="Button">BROWSE DECORATIONS</Link>                         
             </div>
         </main>
     );
