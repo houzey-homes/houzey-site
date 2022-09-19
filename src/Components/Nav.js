@@ -10,7 +10,7 @@ function Nav() {
       <Link to="/" id="Nav0" className="NavLink0"><h1 className="TextLogo">Houzey</h1></Link>
       
 
-      <nav>
+      <nav className="NavLinks">
             <Link to="/Homeowner" id="Nav1" className="NavLink1">SIGN IN</Link>
             <Link to="/Homeowner" id="Nav2" className="NavLink2">SIGN UP</Link>
       </nav>

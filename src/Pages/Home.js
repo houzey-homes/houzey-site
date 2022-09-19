@@ -12,9 +12,8 @@ import Footer from '../Components/Footer'
 function Home () {
     return (
         <main>
-        <Nav />
         <div className="App">
-
+            <Nav />
             <div className="NameBar">
             <h1>Houzey</h1>
             </div>
