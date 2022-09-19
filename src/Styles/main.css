@@ -146,6 +146,7 @@
 .App-body, .App-demo {
   background-color: #5b8df1;
   min-height: 50vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,7 +157,7 @@
 
 .Footer {
     border-top: #61dafb;
-    border-width: 2vh;
+    border-width: 7vh;
     border-left: 0ch;
     border-right: 0ch;
     border-bottom: 0ch;
@@ -193,7 +194,7 @@
 }
 
 .Cartoon {
-  height: 40vmin;
+  height: calc(47vmin + 95px);
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -208,7 +209,7 @@
 }
 
 .Img-rotate {
-  height: 40vmin;
+  height: calc(47vmin + 95px);
   pointer-events: none;
   padding-top: 50px;
   padding-bottom: 50px;
