@@ -155,6 +155,11 @@
   color: white;
 }
 
+.BulletinList {
+  text-align: cemter;
+  padding-bottom: 10vh;
+}
+
 .Footer {
     border-top: 7vh solid #61dafb;
     background-color: #282c34;
