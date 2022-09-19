@@ -38,9 +38,10 @@
   color: white;
 }
 
-.NavLinks {
+.NavLinks, .FooterNavLinks {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .NavLink0 {
