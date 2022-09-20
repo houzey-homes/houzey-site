@@ -2,10 +2,14 @@ import '../Styles/main.css';
 import { useState } from "react";
 
 const GuestZipForm = () => {
-  const [guestZip, setGuestZip] = useState('');
+  const [useremail] = useState('Guest');
+  const [usercity, setUsercity] = useState('');
 
-  const handleGuestZipFormSubmit = (e) => {
+  const handleGuestBrowseFormSubmit = (e) => {
     e.preventDefault();
+    const userinfo = { useremail, usercity };
+
+    console.log(userinfo);
   }
 
     return (
@@ -25,10 +29,10 @@ const GuestZipForm = () => {
                   
                   <div className="GuestZipFormInput">     
 
-                    <form onSubmit={handleGuestZipFormSubmit}>                               
+                    <form onSubmit={handleGuestBrowseFormSubmit}>                               
                       <select
-                      value={guestZip}
-                      onChange={(e) => setGuestZip(e.target.value) }
+                      value={usercity}
+                      onChange={(e) => setUsercity(e.target.value) }
                       >
                         <option value="">Select City</option>
                         <option value="Salem">Salem</option>

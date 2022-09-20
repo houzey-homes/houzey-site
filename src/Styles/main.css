@@ -35,6 +35,7 @@
     text-decoration: none;
     border: solid;
     border-color: white;
+    border-radius: 11px;
 }
 
 .Button:hover  {
