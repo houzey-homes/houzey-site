@@ -37,6 +37,10 @@
     border-color: white;
 }
 
+.Button:hover  {
+  color: hotpink;
+  border-color: hotpink;
+}
 .HomeownerHomeContent {
     padding-bottom: 15vh;
 }
@@ -135,6 +139,7 @@
   padding: 1vmin;
   height: 77px;
   width: 77px;
+  border-radius: 20px;
 }
 
 .NavLogo:hover {
@@ -223,6 +228,25 @@
 .form-control {
   width: 100%;
   height: 22px;
+}
+
+.GuestZipForm { 
+  display: flex;
+  flex-direction: column;
+  color: #282c34;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  background-color: #282c34;
+}
+
+.GuestZipFormBody {
+  background-color: #61dafb;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.GuestZipFormInput {
+  padding-left: 1vw;
 }
 
 .Img-rotate {

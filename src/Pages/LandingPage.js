@@ -8,13 +8,21 @@ import cartoon4 from '../Images/cartoon4.png';
 import cartoon5 from '../Images/cartoon5.png';
 import Nav from '../Components/Nav'
 import Footer from '../Components/Footer'
+import GuestZipForm from '../Components/GuestZipForm'
 
 function Home () {
     return (
         <main>
         <div className="App">
+            
             <Nav />
+
+            <div className="GuestZipFormBar">
+                <GuestZipForm /> 
+            </div>
+
             <div className="NameBar">
+                  
                 <h1>Houzey</h1>
             </div>
 
