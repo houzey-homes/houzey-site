@@ -1,15 +1,16 @@
 import '../Styles/main.css';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const GuestZipForm = () => {
+const QuickZipGuestForm = () => {
   const [useremail] = useState('Guest');
   const [usercity, setUsercity] = useState('');
 
-  const handleGuestBrowseFormSubmit = (e) => {
-    e.preventDefault();
-    const userinfo = { useremail, usercity };
+  const navigate = useNavigate();
 
-    console.log(userinfo);
+  const handleQuickZipGuestFormSubmit = (e) => {
+    e.preventDefault();
+    navigate('/Browsing', { state: { user: useremail, city: usercity } });
   }
 
     return (
@@ -29,7 +30,7 @@ const GuestZipForm = () => {
                   
                   <div className="GuestZipFormInput">     
 
-                    <form onSubmit={handleGuestBrowseFormSubmit}>                               
+                    <form onSubmit={handleQuickZipGuestFormSubmit}>                               
                       <select
                       value={usercity}
                       onChange={(e) => setUsercity(e.target.value) }
@@ -57,4 +58,4 @@ const GuestZipForm = () => {
     );
 }
 
-export default GuestZipForm;
+export default QuickZipGuestForm;
