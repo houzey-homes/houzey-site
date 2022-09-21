@@ -1,0 +1,65 @@
+.DecorationGridArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: dashed;
+    border-color: green;
+    background-color: cornflowerblue;
+}
+
+.DecorationItemCard {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: dashed;
+    border-color: greenyellow;
+}
+
+.DecorationItemImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    object-fit: fill;
+    border: dashed;
+    border-color: red;
+}
+
+.DecorationItemCartOptions {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: dashed;
+    border-color: purple;
+    margin-bottom: 0px;
+}
+
+.DecorationItemInfo{
+    display: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+}
+
+.MoreInfoButton {
+}
+
+@media only screen and (max-width: 240px) {
+    .DecorationItemCartOptions {
+        flex-direction: column;
+    }
+  }
+
+@media only screen and (max-width: 320px) {
+    .DecorationItemInfo{
+        display: none;
+    }
+    .MoreInfoButton {
+        display: contents;
+    }
+  }

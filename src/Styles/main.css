@@ -162,7 +162,7 @@
   color: white;
 }
 
-.App-body, .BrowsingBody {
+.App-body, .BrowsingHead {
   background-color: #5b8df1;
   min-height: 50vh;
   width: 100%;
@@ -174,7 +174,7 @@
   color: white;
 }
 
-.BrowsingBody {
+.BrowsingHead {
   background-color: rgb(167, 128, 219);
 }
 
