@@ -1,4 +1,5 @@
 import decorationimg from '../Images/testimg.jpg';
+import decorationimg2 from '../Images/testimg2.jpg';
 import '../Styles/main.css';
 import '../Styles/decorationitemcard.css';
 import React, { useState } from 'react';
@@ -15,29 +16,25 @@ function DecorationItem() {
 
     <div className="DecorationItemCard">
 
-        <div className="DecorationItemInfo">
-            <p>Look at these beauts! Amazing aren't they? You'll be the envy of the street with these.</p>
-        </div>
-
-        <div className="DecorationItemImage">
+        <div className="DecorationItemBox">
+            
             <h5>Christmas Lights!<br></br>$25.00</h5>
-            <img src={decorationimg} className="DecorationItemImage" alt="decoration" />
+            <img src={decorationimg2} className="DecorationItemImage" alt="decoration" />
 
             <div className="DecorationItemCartOptions"> 
-            
-                <input type="button" value="i" className="Button" onClick={togglePopup}/>
+
+                <input type="button" value="i" className="CartButton" onClick={togglePopup}/>
                     {isOpen && <DecorationInfoModal
                     content={<>
-                        <b>Design your Popup</b>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <button className="Button">Test button</button>
+                        <b>Christmas Lights</b>
+                        <p>Look at these beauts! Amazing aren't they? You'll be the envy of the street with these.</p>
+                        <button className="Button" onClick={togglePopup}>Close</button>
                     </>}
                     handleClose={togglePopup}
                 />}
-                <div className="DecorationItemRemoveFromCartButton"><button className="Button">-</button></div>
-                <div className="DecorationItemAmountInCart">(x0)</div>
-                <div className="DecorationItemTotalCostInCart">$0.00</div>
-                <div className="DecorationItemAddToCartButton"><button className="Button">+</button></div>
+                <div className="DecorationItemRemoveFromCartButton"><button className="CartButton">-</button></div>
+                <div className="DecorationItemAmountInCart">(x1111)<br></br>$2,000,000.00</div>
+                <div className="DecorationItemAddToCartButton"><button className="CartButton">+</button></div>
                 
             </div>
 
