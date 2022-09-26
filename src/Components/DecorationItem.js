@@ -17,7 +17,7 @@ function DecorationItem() {
     <div className="DecorationItemCard">
 
         <div className="DecorationItemBox">
-            
+
             <h5>Christmas Lights!<br></br>$25.00</h5>
             <img src={decorationimg2} className="DecorationItemImage" alt="decoration" />
 

@@ -1,0 +1,62 @@
+type DollarAmount {
+  Dollars: Int
+  Cents: Int
+}
+
+type Address {
+  Street: String
+  City: String
+  State: String
+  ZipCode: String
+}
+
+type HomeEvent @model @auth(rules: [{allow: owner, operations: [read, update]}, {allow: groups, groups: ["Contractors"], operations: [read, create, update, delete]}, {allow: private, operations: [read]}]) {
+  id: ID!
+  isInstall: Boolean
+  isTakedown: Boolean
+  isMaintenance: Boolean
+  address: Address
+  eventDateTime: AWSDateTime
+}
+
+type Contractor @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstname: String
+  lastname: String
+  phone: AWSPhone
+  email: AWSEmail
+  address: Address
+  startdate: AWSDate
+  rating: Float
+}
+
+type Homeowner @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstname: String
+  lastname: String
+  phone: String
+  email: String
+  address: Address
+  rating: Float
+}
+
+type DecorationOrder @model @auth(rules: [{allow: owner}, {allow: private, operations: [read, create]}, {allow: groups, groups: ["Contractors"], operations: [read, update]}]) {
+  id: ID!
+  total: DollarAmount
+  decorations: String
+  address: String
+  installEvent: AWSDateTime
+  takedownEvent: AWSDateTime
+}
+
+type Decoration @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  season: String
+  holiday: String
+  isRentable: Boolean
+  isAvailable: Boolean
+  price: String
+}
+ 

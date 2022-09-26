@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3houzeysitestorage",
+  "bucketName": "houzey-site-storage",
+  "policyUUID": "bd7a3fe3",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ"
+  ]
+}
