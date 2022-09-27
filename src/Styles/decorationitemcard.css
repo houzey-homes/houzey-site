@@ -25,6 +25,7 @@
 }
 
 .DecorationItemImage {
+    object-fit: cover;
     width: calc(50vw + 30px);
     padding: 5px;
 }
