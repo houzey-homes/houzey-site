@@ -6,30 +6,33 @@ import { useLocation } from 'react-router-dom';
 import DecorationItem from '../Components/DecorationItem';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from '../graphql/queries';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
     
 function DecorationBrowsing() {
+
+    const [decorations, setDecorations] = useState();
 
     useEffect(() => {
        const pullData = async () => {
 
         const allDecorations = await API.graphql({ query: queries.listDecorations });
-        console.log(allDecorations);
-
+        
         const halloweenDecorations = await API.graphql(
           graphqlOperation(queries.listDecorations, { filter: { holiday: { contains: "Halloween" } } })
-        )
-        console.log(halloweenDecorations);
+        );    
+
+        setDecorations(halloweenDecorations);
 
        }
        pullData()
     }, [])
 
-
     const location = useLocation();
 
     return (
-      <main>
+ 
+
+        <main>
         <div className="App">
           <UserNav />
             <div className="BrowsingHead">
@@ -38,11 +41,13 @@ function DecorationBrowsing() {
               <div>CITY: {location.state.city}</div>
             </div>
             <div className="DecorationGridArea">
-              <DecorationItem />
+              <DecorationItem items={decorations}/>
             </div>
           <Footer />
         </div>
         </main>
+      
+
     );
   }
   export default DecorationBrowsing;
