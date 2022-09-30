@@ -3,14 +3,12 @@ import React from 'react';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer'
 import { useLocation } from 'react-router-dom';
-import DecorationCard from '../ui-components/DecorationCard';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from '../graphql/queries';
 import { useEffect, useState, useContext } from 'react';
-import ShoppingCart from '../Components/ShoppingCart';
-import { DecorationCardCollection } from '../ui-components';
 import CartContext from '../Contexts/CartContext';
 import DecorationItem from '../Components/DecorationItem';
+import ShoppingCart from '../Components/ShoppingCart';
 
 const itemCart = [{id: 0, quantity: 77}];
     

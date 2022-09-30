@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import '../Styles/main.css';
 import '../Styles/decorationitemcard.css';
 import { useState, useContext } from 'react';
-import DecorationInfoModal from './DecorationInfoModal';
 import CartContext from '../Contexts/CartContext';
 
 function DecorationItem(props) {
@@ -37,7 +36,7 @@ function DecorationItem(props) {
                                     setModalIsOpen(true);
                                 }}>i</button></div>
                                 <div className="DecorationItemRemoveFromCartButton"><button className="CartButton" onClick={() => setQuantity(quantity - 1)}>-</button></div>
-                                <div className="DecorationItemAmountInCart">({cart.quantity})<br></br>$2,000,000.00</div>
+                                <div className="DecorationItemAmountInCart">({cart.quantity})</div>
                                 <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={() => setQuantity(quantity + 1)}>+</button></div>
                                 
                             </div>
@@ -45,11 +44,16 @@ function DecorationItem(props) {
                         </div>
                         
                         <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} >
-                            <h1>{modalData[0]}</h1>
-                            <p>{modalData[1]}</p> 
-                            <div>
-                            <button className="CartButton" onClick={() => setModalIsOpen(false)}>X</button>
+                        <div className="popup-box">
+                            <div className="box">
+                                <h1>{modalData[0]}</h1>
+                                <p>{modalData[1]}</p> 
+                                <div>
+                                    <button className="CartButton" onClick={() => setModalIsOpen(false)}>X</button>
+                                </div>
                             </div>
+                        </div>
+                            
                         </Modal>
                     </div> 
                 ))}
