@@ -3,10 +3,16 @@ import React from 'react';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer'
 import { useLocation } from 'react-router-dom';
-import DecorationItem from '../Components/DecorationItem';
+import DecorationCard from '../ui-components/DecorationCard';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from '../graphql/queries';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import ShoppingCart from '../Components/ShoppingCart';
+import { DecorationCardCollection } from '../ui-components';
+import CartContext from '../Contexts/CartContext';
+import DecorationItem from '../Components/DecorationItem';
+
+const itemCart = [{id: 0, quantity: 77}];
     
 function DecorationBrowsing() {
 
@@ -14,8 +20,6 @@ function DecorationBrowsing() {
 
     useEffect(() => {
        const pullData = async () => {
-
-        const allDecorations = await API.graphql({ query: queries.listDecorations });
         
         const halloweenDecorations = await API.graphql(
           graphqlOperation(queries.listDecorations, { filter: { holiday: { contains: "Halloween" } } })
@@ -41,7 +45,12 @@ function DecorationBrowsing() {
               <div>CITY: {location.state.city}</div>
             </div>
             <div className="DecorationGridArea">
-              <DecorationItem items={decorations}/>
+         
+                <CartContext.Provider value={itemCart}>
+                  <DecorationItem items={decorations} />
+                </CartContext.Provider>
+ 
+              
             </div>
           <Footer />
         </div>

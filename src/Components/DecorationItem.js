@@ -1,57 +1,60 @@
-import decorationimg from '../Images/testimg.jpg';
-import decorationimg2 from '../Images/testimg2.jpg';
 import React from 'react';
+import Modal from 'react-modal';
 import '../Styles/main.css';
 import '../Styles/decorationitemcard.css';
-import { useState } from 'react';
-import DecorationInfoModal from '../Components/DecorationInfoModal';
-import { Collection, Card} from '@aws-amplify/ui-react';
+import { useState, useContext } from 'react';
+import DecorationInfoModal from './DecorationInfoModal';
+import CartContext from '../Contexts/CartContext';
 
 function DecorationItem(props) {
 
-    const [isOpen, setIsOpen] = useState(false);
-
     const [quantity, setQuantity] = useState(0);
- 
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    }
-    
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalData, setModalData] = useState(['Loading Name', 'Loading Description']);
+
     const decorationsList = props.items;
     console.log('decoList:', decorationsList);
 
+    const cart = useContext(CartContext);
+    
+    console.log(cart);
+
     return (        
 
-            <div className="DecorationItemCard">
-                 {decorationsList && decorationsList.data.listDecorations.items.map(decoration => (
+            <div>
+                {decorationsList && decorationsList.data.listDecorations.items.map(decoration => (
                     
-                    <div className="DecorationItemBox">
+                    <div className="DecorationItemCard">
+                        <div className="DecorationItemBox" key={decoration.id}>
 
-                        <h5>{decoration.name}<br></br>{decoration.price}</h5>
-                        <img src={decorationimg2} className="DecorationItemImage" alt="decoration" />
+                            <h5>{decoration.name}<br></br>{decoration.price}</h5>
+                            <img src={decoration.imglink} className="DecorationItemImage" alt="decoration" />
 
-                        <div className="DecorationItemCartOptions"> 
+                            <div className="DecorationItemCartOptions"> 
+                                <div className="DecorationItemInfoButton"><button className="CartButton" onClick={ () => {
+                                    setModalData([decoration.name, decoration.description]);
+                                    setModalIsOpen(true);
+                                }}>i</button></div>
+                                <div className="DecorationItemRemoveFromCartButton"><button className="CartButton" onClick={() => setQuantity(quantity - 1)}>-</button></div>
+                                <div className="DecorationItemAmountInCart">({cart.quantity})<br></br>$2,000,000.00</div>
+                                <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={() => setQuantity(quantity + 1)}>+</button></div>
+                                
+                            </div>
 
-                            <input type="button" value="i" className="CartButton" onClick={togglePopup}/>
-                                {isOpen && <DecorationInfoModal
-                                content={<>
-                                    <b>{decoration.name}</b>
-                                    <p>{decoration.description}</p>
-                                    <button className="Button" onClick={togglePopup}>Close</button>
-                                </>}
-                                handleClose={togglePopup}
-                            />}
-                            <div className="DecorationItemRemoveFromCartButton"><button className="CartButton">-</button></div>
-                            <div className="DecorationItemAmountInCart">({quantity})<br></br>$2,000,000.00</div>
-                            <div className="DecorationItemAddToCartButton"><button className="CartButton">+</button></div>
-                            
                         </div>
-
-                    </div>
-
+                        
+                        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} >
+                            <h1>{modalData[0]}</h1>
+                            <p>{modalData[1]}</p> 
+                            <div>
+                            <button className="CartButton" onClick={() => setModalIsOpen(false)}>X</button>
+                            </div>
+                        </Modal>
+                    </div> 
                 ))}
-
-            </div>    
+            </div>
+               
 
   );
 }

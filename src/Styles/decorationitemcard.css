@@ -26,7 +26,8 @@
 
 .DecorationItemImage {
     object-fit: cover;
-    width: calc(50vw + 30px);
+    height: calc(20vh + 200px);
+    width: calc(20vw + 200px);
     padding: 5px;
 }
 
@@ -103,6 +104,9 @@
     }
     .MoreInfoButton {
         display: contents;
+    }
+    .DecorationItemCard {
+        flex-direction: column;
     }
   }
 

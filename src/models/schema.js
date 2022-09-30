@@ -171,6 +171,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "decorationorders": {
+                    "name": "decorationorders",
+                    "isArray": true,
+                    "type": {
+                        "model": "DecorationOrderContractor"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "contractor"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -206,6 +220,148 @@ export const schema = {
                                     "update",
                                     "delete",
                                     "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "DecorationOrder": {
+            "name": "DecorationOrder",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "total": {
+                    "name": "total",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "DollarAmount"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "decorationList": {
+                    "name": "decorationList",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "address": {
+                    "name": "address",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "installEvent": {
+                    "name": "installEvent",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "takedownEvent": {
+                    "name": "takedownEvent",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "homeownerID": {
+                    "name": "homeownerID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Contractors": {
+                    "name": "Contractors",
+                    "isArray": true,
+                    "type": {
+                        "model": "DecorationOrderContractor"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "decorationOrder"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "DecorationOrders",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byHomeowner",
+                        "fields": [
+                            "homeownerID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "provider": "userPools",
+                                "ownerField": "owner",
+                                "allow": "owner",
+                                "identityClaim": "cognito:username",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "read",
+                                    "create"
+                                ]
+                            },
+                            {
+                                "groupClaim": "cognito:groups",
+                                "provider": "userPools",
+                                "allow": "groups",
+                                "groups": [
+                                    "Contractors"
+                                ],
+                                "operations": [
+                                    "read",
+                                    "update"
                                 ]
                             }
                         ]
@@ -267,6 +423,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "HomeownerToDecorationOrders": {
+                    "name": "HomeownerToDecorationOrders",
+                    "isArray": true,
+                    "type": {
+                        "model": "DecorationOrder"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "homeownerID"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -302,117 +472,6 @@ export const schema = {
                                     "update",
                                     "delete",
                                     "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "DecorationOrder": {
-            "name": "DecorationOrder",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "total": {
-                    "name": "total",
-                    "isArray": false,
-                    "type": {
-                        "nonModel": "DollarAmount"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "decorations": {
-                    "name": "decorations",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "address": {
-                    "name": "address",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "installEvent": {
-                    "name": "installEvent",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "takedownEvent": {
-                    "name": "takedownEvent",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                }
-            },
-            "syncable": true,
-            "pluralName": "DecorationOrders",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "provider": "userPools",
-                                "ownerField": "owner",
-                                "allow": "owner",
-                                "identityClaim": "cognito:username",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            },
-                            {
-                                "allow": "private",
-                                "operations": [
-                                    "read",
-                                    "create"
-                                ]
-                            },
-                            {
-                                "groupClaim": "cognito:groups",
-                                "provider": "userPools",
-                                "allow": "groups",
-                                "groups": [
-                                    "Contractors"
-                                ],
-                                "operations": [
-                                    "read",
-                                    "update"
                                 ]
                             }
                         ]
@@ -479,6 +538,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "imglink": {
+                    "name": "imglink",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -516,6 +582,86 @@ export const schema = {
                                     "read"
                                 ]
                             }
+                        ]
+                    }
+                }
+            ]
+        },
+        "DecorationOrderContractor": {
+            "name": "DecorationOrderContractor",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "contractor": {
+                    "name": "contractor",
+                    "isArray": false,
+                    "type": {
+                        "model": "Contractor"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "contractorID"
+                    }
+                },
+                "decorationOrder": {
+                    "name": "decorationOrder",
+                    "isArray": false,
+                    "type": {
+                        "model": "DecorationOrder"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "decorationOrderID"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "DecorationOrderContractors",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byContractor",
+                        "fields": [
+                            "contractorID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byDecorationOrder",
+                        "fields": [
+                            "decorationOrderID"
                         ]
                     }
                 }
@@ -577,5 +723,5 @@ export const schema = {
             }
         }
     },
-    "version": "bed91398b700ba5d32c53b22009bc662"
+    "version": "f0e600bd7293c0457189d51603bed25d"
 };

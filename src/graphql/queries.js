@@ -96,6 +96,10 @@ export const getContractor = /* GraphQL */ `
       }
       startdate
       rating
+      decorationorders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -177,6 +181,10 @@ export const getHomeowner = /* GraphQL */ `
         ZipCode
       }
       rating
+      HomeownerToDecorationOrders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -249,10 +257,15 @@ export const getDecorationOrder = /* GraphQL */ `
         Dollars
         Cents
       }
-      decorations
+      decorationList
       address
       installEvent
       takedownEvent
+      homeownerID
+      Contractors {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -275,10 +288,11 @@ export const listDecorationOrders = /* GraphQL */ `
     ) {
       items {
         id
-        decorations
+        decorationList
         address
         installEvent
         takedownEvent
+        homeownerID
         createdAt
         updatedAt
         _version
@@ -306,10 +320,11 @@ export const syncDecorationOrders = /* GraphQL */ `
     ) {
       items {
         id
-        decorations
+        decorationList
         address
         installEvent
         takedownEvent
+        homeownerID
         createdAt
         updatedAt
         _version
@@ -333,6 +348,7 @@ export const getDecoration = /* GraphQL */ `
       isRentable
       isAvailable
       price
+      imglink
       createdAt
       updatedAt
       _version
@@ -357,6 +373,7 @@ export const listDecorations = /* GraphQL */ `
         isRentable
         isAvailable
         price
+        imglink
         createdAt
         updatedAt
         _version
@@ -390,11 +407,111 @@ export const syncDecorations = /* GraphQL */ `
         isRentable
         isAvailable
         price
+        imglink
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getDecorationOrderContractor = /* GraphQL */ `
+  query GetDecorationOrderContractor($id: ID!) {
+    getDecorationOrderContractor(id: $id) {
+      id
+      contractorID
+      decorationOrderID
+      contractor {
+        id
+        firstname
+        lastname
+        phone
+        email
+        startdate
+        rating
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      decorationOrder {
+        id
+        decorationList
+        address
+        installEvent
+        takedownEvent
+        homeownerID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const listDecorationOrderContractors = /* GraphQL */ `
+  query ListDecorationOrderContractors(
+    $filter: ModelDecorationOrderContractorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDecorationOrderContractors(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        contractorID
+        decorationOrderID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncDecorationOrderContractors = /* GraphQL */ `
+  query SyncDecorationOrderContractors(
+    $filter: ModelDecorationOrderContractorFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncDecorationOrderContractors(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        contractorID
+        decorationOrderID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
       }
       nextToken
       startedAt

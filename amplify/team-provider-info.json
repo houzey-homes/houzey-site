@@ -1,33 +1,15 @@
 {
-  "staging": {
+  "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify178ae785124a4-staging-134613-authRole",
-      "UnauthRoleArn": "arn:aws:iam::517856304093:role/amplify-amplify178ae785124a4-staging-134613-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::517856304093:role/amplify-amplify178ae785124a4-staging-134613-authRole",
+      "AuthRoleName": "amplify-houzeysite-main-232819-authRole",
+      "UnauthRoleArn": "arn:aws:iam::517856304093:role/amplify-houzeysite-main-232819-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::517856304093:role/amplify-houzeysite-main-232819-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplify178ae785124a4-staging-134613-deployment",
-      "UnauthRoleName": "amplify-amplify178ae785124a4-staging-134613-unauthRole",
-      "StackName": "amplify-amplify178ae785124a4-staging-134613",
-      "StackId": "arn:aws:cloudformation:us-east-1:517856304093:stack/amplify-amplify178ae785124a4-staging-134613/c5378460-3045-11ed-a0cb-0a4a0ea3b259",
-      "AmplifyAppId": "dv89m66obfqfi"
-    },
-    "categories": {
-      "auth": {
-        "houzeysite": {}
-      }
-    }
-  },
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-houzeysite-dev-72531-authRole",
-      "UnauthRoleArn": "arn:aws:iam::517856304093:role/amplify-houzeysite-dev-72531-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::517856304093:role/amplify-houzeysite-dev-72531-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-houzeysite-dev-72531-deployment",
-      "UnauthRoleName": "amplify-houzeysite-dev-72531-unauthRole",
-      "StackName": "amplify-houzeysite-dev-72531",
-      "StackId": "arn:aws:cloudformation:us-east-1:517856304093:stack/amplify-houzeysite-dev-72531/ebb79660-3659-11ed-9b5c-0a138c864955",
-      "AmplifyAppId": "dv89m66obfqfi"
+      "DeploymentBucketName": "amplify-houzeysite-main-232819-deployment",
+      "UnauthRoleName": "amplify-houzeysite-main-232819-unauthRole",
+      "StackName": "amplify-houzeysite-main-232819",
+      "StackId": "arn:aws:cloudformation:us-east-1:517856304093:stack/amplify-houzeysite-main-232819/127eb160-3ebc-11ed-bfdd-12e6cae9ffb5",
+      "AmplifyAppId": "d3kypjfmk883zt"
     },
     "categories": {
       "auth": {

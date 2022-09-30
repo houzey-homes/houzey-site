@@ -98,6 +98,10 @@ export const createContractor = /* GraphQL */ `
       }
       startdate
       rating
+      decorationorders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -125,6 +129,10 @@ export const updateContractor = /* GraphQL */ `
       }
       startdate
       rating
+      decorationorders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -152,6 +160,10 @@ export const deleteContractor = /* GraphQL */ `
       }
       startdate
       rating
+      decorationorders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -178,6 +190,10 @@ export const createHomeowner = /* GraphQL */ `
         ZipCode
       }
       rating
+      HomeownerToDecorationOrders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -204,6 +220,10 @@ export const updateHomeowner = /* GraphQL */ `
         ZipCode
       }
       rating
+      HomeownerToDecorationOrders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -230,6 +250,10 @@ export const deleteHomeowner = /* GraphQL */ `
         ZipCode
       }
       rating
+      HomeownerToDecorationOrders {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -249,10 +273,15 @@ export const createDecorationOrder = /* GraphQL */ `
         Dollars
         Cents
       }
-      decorations
+      decorationList
       address
       installEvent
       takedownEvent
+      homeownerID
+      Contractors {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -273,10 +302,15 @@ export const updateDecorationOrder = /* GraphQL */ `
         Dollars
         Cents
       }
-      decorations
+      decorationList
       address
       installEvent
       takedownEvent
+      homeownerID
+      Contractors {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -297,10 +331,15 @@ export const deleteDecorationOrder = /* GraphQL */ `
         Dollars
         Cents
       }
-      decorations
+      decorationList
       address
       installEvent
       takedownEvent
+      homeownerID
+      Contractors {
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -324,6 +363,7 @@ export const createDecoration = /* GraphQL */ `
       isRentable
       isAvailable
       price
+      imglink
       createdAt
       updatedAt
       _version
@@ -346,6 +386,7 @@ export const updateDecoration = /* GraphQL */ `
       isRentable
       isAvailable
       price
+      imglink
       createdAt
       updatedAt
       _version
@@ -368,11 +409,150 @@ export const deleteDecoration = /* GraphQL */ `
       isRentable
       isAvailable
       price
+      imglink
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+    }
+  }
+`;
+export const createDecorationOrderContractor = /* GraphQL */ `
+  mutation CreateDecorationOrderContractor(
+    $input: CreateDecorationOrderContractorInput!
+    $condition: ModelDecorationOrderContractorConditionInput
+  ) {
+    createDecorationOrderContractor(input: $input, condition: $condition) {
+      id
+      contractorID
+      decorationOrderID
+      contractor {
+        id
+        firstname
+        lastname
+        phone
+        email
+        startdate
+        rating
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      decorationOrder {
+        id
+        decorationList
+        address
+        installEvent
+        takedownEvent
+        homeownerID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const updateDecorationOrderContractor = /* GraphQL */ `
+  mutation UpdateDecorationOrderContractor(
+    $input: UpdateDecorationOrderContractorInput!
+    $condition: ModelDecorationOrderContractorConditionInput
+  ) {
+    updateDecorationOrderContractor(input: $input, condition: $condition) {
+      id
+      contractorID
+      decorationOrderID
+      contractor {
+        id
+        firstname
+        lastname
+        phone
+        email
+        startdate
+        rating
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      decorationOrder {
+        id
+        decorationList
+        address
+        installEvent
+        takedownEvent
+        homeownerID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const deleteDecorationOrderContractor = /* GraphQL */ `
+  mutation DeleteDecorationOrderContractor(
+    $input: DeleteDecorationOrderContractorInput!
+    $condition: ModelDecorationOrderContractorConditionInput
+  ) {
+    deleteDecorationOrderContractor(input: $input, condition: $condition) {
+      id
+      contractorID
+      decorationOrderID
+      contractor {
+        id
+        firstname
+        lastname
+        phone
+        email
+        startdate
+        rating
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      decorationOrder {
+        id
+        decorationList
+        address
+        installEvent
+        takedownEvent
+        homeownerID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;

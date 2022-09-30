@@ -28,6 +28,7 @@ type Contractor @model @auth(rules: [{allow: public}]) {
   address: Address
   startdate: AWSDate
   rating: Float
+  decorationorders: [DecorationOrder] @manyToMany(relationName: "DecorationOrderContractor")
 }
 
 type Homeowner @model @auth(rules: [{allow: public}]) {
@@ -38,15 +39,18 @@ type Homeowner @model @auth(rules: [{allow: public}]) {
   email: String
   address: Address
   rating: Float
+  HomeownerToDecorationOrders: [DecorationOrder] @hasMany(indexName: "byHomeowner", fields: ["id"])
 }
 
 type DecorationOrder @model @auth(rules: [{allow: owner}, {allow: private, operations: [read, create]}, {allow: groups, groups: ["Contractors"], operations: [read, update]}]) {
   id: ID!
   total: DollarAmount
-  decorations: String
+  decorationList: [String]
   address: String
   installEvent: AWSDateTime
   takedownEvent: AWSDateTime
+  homeownerID: ID! @index(name: "byHomeowner")
+  Contractors: [Contractor] @manyToMany(relationName: "DecorationOrderContractor")
 }
 
 type Decoration @model @auth(rules: [{allow: public}]) {
@@ -58,5 +62,6 @@ type Decoration @model @auth(rules: [{allow: public}]) {
   isRentable: Boolean
   isAvailable: Boolean
   price: String
+  imglink: String
 }
  

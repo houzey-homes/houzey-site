@@ -6,8 +6,15 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type HeroLayout4Props = React.PropsWithChildren<Partial<FlexProps> & {
+import { DecorationCardProps } from "./DecorationCard";
+import { CollectionProps } from "@aws-amplify/ui-react";
+export declare type DecorationCardCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: (collectionItem: {
+        item: any;
+        index: number;
+    }) => DecorationCardProps;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function HeroLayout4(props: HeroLayout4Props): React.ReactElement;
+export default function DecorationCardCollection(props: DecorationCardCollectionProps): React.ReactElement;
