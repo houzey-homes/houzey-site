@@ -10,7 +10,7 @@ import CartContext from '../Contexts/CartContext';
 import DecorationItem from '../Components/DecorationItem';
 import ShoppingCart from '../Components/ShoppingCart';
 
-const itemCart = [{id: 0, quantity: 77}];
+const itemCart = [{id: null, quantity: null}];
     
 function DecorationBrowsing() {
 

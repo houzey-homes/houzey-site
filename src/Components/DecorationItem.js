@@ -19,6 +19,17 @@ function DecorationItem(props) {
     
     console.log(cart);
 
+    
+    const adjustQuantityUp = (quantity) => {
+        setQuantity(quantity + 1);
+    }
+
+    const adjustQuantityDown = (quantity) => {
+        if(quantity > 0){
+            setQuantity(quantity - 1);
+        }
+    }
+
     return (        
 
             <div>
@@ -35,9 +46,13 @@ function DecorationItem(props) {
                                     setModalData([decoration.name, decoration.description]);
                                     setModalIsOpen(true);
                                 }}>i</button></div>
-                                <div className="DecorationItemRemoveFromCartButton"><button className="CartButton" onClick={() => setQuantity(quantity - 1)}>-</button></div>
-                                <div className="DecorationItemAmountInCart">({cart.quantity})</div>
-                                <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={() => setQuantity(quantity + 1)}>+</button></div>
+                                <div className="DecorationItemRemoveFromCartButton"><button className="CartButton" onClick={ () => {
+                                    adjustQuantityDown(quantity);
+                                }}>-</button></div>
+                                <div className="DecorationItemAmountInCart">({quantity})</div>
+                                <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={ () => {
+                                    adjustQuantityUp(quantity);
+                                }}>+</button></div>
                                 
                             </div>
 
