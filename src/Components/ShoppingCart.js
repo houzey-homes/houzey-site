@@ -5,9 +5,9 @@ export default function ShoppingCart(props) {
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   console.log(cartItems);
   
-  const taxPrice = itemsPrice * 0.14;
-  const shippingPrice = itemsPrice > 2000 ? 0 : 20;
-  const totalPrice = itemsPrice + taxPrice + shippingPrice;
+  const houzeyPrice = itemsPrice * 0.06;
+  const laborPrice = 100;
+  const totalPrice = houzeyPrice + laborPrice + itemsPrice;
   return (
     <aside className="block col-1">
       <h2>Cart Items</h2>
@@ -35,17 +35,17 @@ export default function ShoppingCart(props) {
           <>
             <hr></hr>
             <div className="row">
-              <div className="col-2">Items Price</div>
+              <div className="col-2">Items</div>
               <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
             </div>
             <div className="row">
-              <div className="col-2">Tax Price</div>
-              <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
+              <div className="col-2">Houzey Helpers</div>
+              <div className="col-1 text-right">${laborPrice.toFixed(2)}</div>
             </div>
             <div className="row">
-              <div className="col-2">Shipping Price</div>
+              <div className="col-2">Houzey Fee</div>
               <div className="col-1 text-right">
-                ${shippingPrice.toFixed(2)}
+                ${houzeyPrice.toFixed(2)}
               </div>
             </div>
 
