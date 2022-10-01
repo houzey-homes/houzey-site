@@ -3,17 +3,14 @@ import React from 'react';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer'
 import { useLocation } from 'react-router-dom';
-import { useEffect, useState, useContext } from 'react';
 import DecorationItem from '../Components/DecorationItem';
 import ShoppingCart from '../Components/ShoppingCart';
 
     
 function DecorationBrowsing(props) {
 
-
-
     const { cartItems, decorations, onAdd, onRemove } = props;
-    
+    console.log('cart: ', cartItems);
     
 
     const location = useLocation();
@@ -39,7 +36,10 @@ function DecorationBrowsing(props) {
                       onAdd={onAdd}
                       onRemove={onRemove}/>
                     ))}
-                    <ShoppingCart />
+                    <ShoppingCart 
+                      cartItems={cartItems} 
+                      onAdd={onAdd}
+                      onRemove={onRemove} />
                   
                 
               </div>

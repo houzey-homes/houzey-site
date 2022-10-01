@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import '../Styles/main.css';
 import '../Styles/decorationitemcard.css';
-import { useEffect, useState, useContext } from 'react';
+import { useState } from 'react';
 
 function DecorationItem(props) {
 
@@ -10,7 +10,6 @@ function DecorationItem(props) {
     const [modalData, setModalData] = useState(['Loading Name', 'Loading Description']);
 
     const { item, decoration, onAdd, onRemove } = props;
-
 
 
     return (        

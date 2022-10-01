@@ -6,7 +6,7 @@ import PageNotFound404 from './Pages/PageNotFound404';
 import DecorationBrowsing from './Pages/DecorationBrowsing';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from './graphql/queries';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -55,8 +55,8 @@ function App() {
   return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Homeowner" element={<Homeowner cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} decorations={decorations}/>} />
-        <Route path="/Browsing" element={<DecorationBrowsing cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} decorations={decorations}/>} />
+        <Route path="/Homeowner" element={<Homeowner cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
+        <Route path="/Browsing" element={<DecorationBrowsing cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="*" element={<PageNotFound404 />} />
       </Routes>
   );
