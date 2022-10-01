@@ -1,11 +1,3 @@
-.DecorationGridArea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: cornflowerblue;
-}
-
 .DecorationItemCard {
     background-color: aliceblue;
     display: flex;

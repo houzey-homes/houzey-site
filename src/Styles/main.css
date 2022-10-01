@@ -178,6 +178,16 @@
   background-color: rgb(167, 128, 219);
 }
 
+.NewBrowsingHead {
+  background-color: #282c34;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
 .BulletinList {
   text-align: cemter;
   padding-bottom: 10vh;
@@ -262,11 +272,62 @@
   border-width: 2vh;
 }
 
+.ShoppingScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: cornflowerblue;
+}
+
+.ShoppingCart {
+  background-color: aliceblue;
+  color: black;
+  top: 40vh;
+  right: 2vw;
+  position: fixed;
+  overflow-y: scroll;
+  white-space: nowrap;
+  height: 50vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  border: solid;
+  border-color: aliceblue;
+  border-width: 10px;
+  border-radius: 5px;
+}
+
+.DecorationGridArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: cornflowerblue;
+  overflow-y: scroll;
+  white-space: nowrap;
+  height: 70vh;
+  width: calc(35vw + 150px);
+  border: solid;
+  border-color: #282c34;
+  border-radius: 15px;
+  border-width: 2vh;
+}
+
 .Img-rotate {
   height: calc(47vmin + 95px);
   pointer-events: none;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .ShoppingCart {
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+    right: 0;
+  }
 }
 
 @media only screen and (max-width: 320px) {

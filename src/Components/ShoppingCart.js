@@ -9,7 +9,7 @@ export default function ShoppingCart(props) {
   const laborPrice = 100;
   const totalPrice = houzeyPrice + laborPrice + itemsPrice;
   return (
-    <aside className="block col-1">
+    <aside className="ShoppingCart">
       <h2>Cart Items</h2>
       <div>
         {cartItems.length === 0 && <div>Cart is empty</div>}
