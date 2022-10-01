@@ -2,41 +2,24 @@ import React from 'react';
 import Modal from 'react-modal';
 import '../Styles/main.css';
 import '../Styles/decorationitemcard.css';
-import { useState, useContext } from 'react';
-import CartContext from '../Contexts/CartContext';
+import { useEffect, useState, useContext } from 'react';
 
 function DecorationItem(props) {
-
-    const [quantity, setQuantity] = useState(0);
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalData, setModalData] = useState(['Loading Name', 'Loading Description']);
 
-    const decorationsList = props.items;
-    console.log('decoList:', decorationsList);
+    const { item, decoration, onAdd, onRemove } = props;
 
-    const cart = useContext(CartContext);
-    
-    console.log(cart);
 
-    
-    const adjustQuantityUp = (quantity) => {
-        setQuantity(quantity + 1);
-    }
-
-    const adjustQuantityDown = (quantity) => {
-        if(quantity > 0){
-            setQuantity(quantity - 1);
-        }
-    }
 
     return (        
 
             <div>
-                {decorationsList && decorationsList.data.listDecorations.items.map(decoration => (
+                
                     
-                    <div className="DecorationItemCard">
-                        <div className="DecorationItemBox" key={decoration.id}>
+                    <div className="DecorationItemCard" key={decoration.id}>
+                        <div className="DecorationItemBox">
 
                             <h5>{decoration.name}<br></br>{decoration.price}</h5>
                             <img src={decoration.imglink} className="DecorationItemImage" alt="decoration" />
@@ -46,13 +29,22 @@ function DecorationItem(props) {
                                     setModalData([decoration.name, decoration.description]);
                                     setModalIsOpen(true);
                                 }}>i</button></div>
-                                <div className="DecorationItemRemoveFromCartButton"><button className="CartButton" onClick={ () => {
-                                    adjustQuantityDown(quantity);
-                                }}>-</button></div>
-                                <div className="DecorationItemAmountInCart">({quantity})</div>
-                                <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={ () => {
-                                    adjustQuantityUp(quantity);
-                                }}>+</button></div>
+                                <div className="DecorationItemRemoveFromCartButton"><button className="CartButton" onClick={ () => onRemove(item)}>-</button></div>
+                                <div className="DecorationItemAmountInCart">
+                                    {item ? (
+                                    <div className="DecorationItemCartOptions">
+                                    <div className="DecorationItemAmountInCart">({item.qty})</div>     
+                                    <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={ () => onAdd(item)}>+</button></div>  
+                                    </div>
+                                    ) : (
+                                        <div className="DecorationItemCartOptions">
+                                            <div className="DecorationItemAmountInCart">(0)</div>    
+                                            <div className="DecorationItemAddToCartButton"><button className="CartButton" onClick={ () => onAdd(decoration)}>+</button></div>        
+                                        </div>
+                                        
+                                    )}
+                                </div>
+                                
                                 
                             </div>
 
@@ -71,7 +63,7 @@ function DecorationItem(props) {
                             
                         </Modal>
                     </div> 
-                ))}
+                
             </div>
                
 
