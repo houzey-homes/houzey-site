@@ -1,6 +1,66 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateAvailableInstallations = /* GraphQL */ `
+  subscription OnCreateAvailableInstallations {
+    onCreateAvailableInstallations {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateAvailableInstallations = /* GraphQL */ `
+  subscription OnUpdateAvailableInstallations {
+    onUpdateAvailableInstallations {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteAvailableInstallations = /* GraphQL */ `
+  subscription OnDeleteAvailableInstallations {
+    onDeleteAvailableInstallations {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateHomeEvent = /* GraphQL */ `
   subscription OnCreateHomeEvent($owner: String) {
     onCreateHomeEvent(owner: $owner) {

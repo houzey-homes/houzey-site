@@ -14,6 +14,10 @@ export declare class Address {
   constructor(init: ModelInit<Address>);
 }
 
+type AvailableInstallationsMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type HomeEventMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -36,6 +40,22 @@ type DecorationMetaData = {
 
 type DecorationOrderContractorMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+export declare class AvailableInstallations {
+  readonly id: string;
+  readonly assignedContractor1?: string | null;
+  readonly assignedContractor2?: string | null;
+  readonly startDateTime: string;
+  readonly isAvailable?: boolean | null;
+  readonly contractor1Phone?: string | null;
+  readonly contractor2Phone?: string | null;
+  readonly day?: string | null;
+  readonly time?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<AvailableInstallations, AvailableInstallationsMetaData>);
+  static copyOf(source: AvailableInstallations, mutator: (draft: MutableModel<AvailableInstallations, AvailableInstallationsMetaData>) => MutableModel<AvailableInstallations, AvailableInstallationsMetaData> | void): AvailableInstallations;
 }
 
 export declare class HomeEvent {

@@ -5,11 +5,11 @@ import Footer from '../Components/Footer'
 import { useLocation } from 'react-router-dom';
 import DecorationItem from '../Components/DecorationItem';
 import ShoppingCart from '../Components/ShoppingCart';
+import Checkout from './Checkout'; 
     
 function DecorationBrowsing(props) {
 
-    const { cartItems, decorations, onAdd, onRemove } = props;
-    console.log('cart: ', cartItems);   
+    const { availableInstallations, cartItems, decorations, onAdd, onRemove } = props;
 
     const location = useLocation();
 
@@ -35,6 +35,7 @@ function DecorationBrowsing(props) {
                     ))}
                 </div>                          
                 <ShoppingCart 
+                  availableInstallations={availableInstallations}
                   cartItems={cartItems} 
                   onAdd={onAdd}
                   onRemove={onRemove} />

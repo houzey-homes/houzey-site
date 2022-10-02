@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function ShoppingCart(props) {
-  const { cartItems, onAdd, onRemove } = props;
+  const { availableInstallations, cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   console.log(cartItems);
   
@@ -59,9 +60,7 @@ export default function ShoppingCart(props) {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
-                Checkout
-              </button>
+                <Link availableInstallations={availableInstallations} className="Button" to="/Checkout" >Checkout</Link>
             </div>
           </>
         )}

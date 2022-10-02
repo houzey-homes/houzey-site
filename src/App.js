@@ -4,11 +4,26 @@ import Home from './Pages/LandingPage';
 import Homeowner from './Components/HomeownerLogin'; 
 import PageNotFound404 from './Pages/PageNotFound404'; 
 import DecorationBrowsing from './Pages/DecorationBrowsing';
+import Checkout from './Pages/Checkout';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from './graphql/queries';
 import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [availableInstallations, setAvailableInstallations] = useState();
+  useEffect(() => {
+      const pullData = async () => {
+      
+      const contractorEvents = await API.graphql(
+        graphqlOperation(queries.listAvailableInstallations)
+      );    
+
+      setAvailableInstallations(contractorEvents);
+
+     }
+     pullData()
+  }, [])
 
   const [cartItems, setCartItems] = useState([]);
   const [decorations, setDecorations] = useState();
@@ -55,8 +70,9 @@ function App() {
   return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Homeowner" element={<Homeowner cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
-        <Route path="/Browsing" element={<DecorationBrowsing cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
+        <Route path="/Homeowner" element={<Homeowner availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
+        <Route path="/Browsing" element={<DecorationBrowsing availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
+        <Route path="/Checkout" element={<Checkout availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="*" element={<PageNotFound404 />} />
       </Routes>
   );

@@ -1,6 +1,92 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getAvailableInstallations = /* GraphQL */ `
+  query GetAvailableInstallations($id: ID!) {
+    getAvailableInstallations(id: $id) {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listAvailableInstallations = /* GraphQL */ `
+  query ListAvailableInstallations(
+    $filter: ModelAvailableInstallationsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAvailableInstallations(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        assignedContractor1
+        assignedContractor2
+        startDateTime
+        isAvailable
+        contractor1Phone
+        contractor2Phone
+        day
+        time
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncAvailableInstallations = /* GraphQL */ `
+  query SyncAvailableInstallations(
+    $filter: ModelAvailableInstallationsFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncAvailableInstallations(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        assignedContractor1
+        assignedContractor2
+        startDateTime
+        isAvailable
+        contractor1Phone
+        contractor2Phone
+        day
+        time
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getHomeEvent = /* GraphQL */ `
   query GetHomeEvent($id: ID!) {
     getHomeEvent(id: $id) {

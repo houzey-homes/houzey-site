@@ -1,6 +1,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createAvailableInstallations = /* GraphQL */ `
+  mutation CreateAvailableInstallations(
+    $input: CreateAvailableInstallationsInput!
+    $condition: ModelAvailableInstallationsConditionInput
+  ) {
+    createAvailableInstallations(input: $input, condition: $condition) {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateAvailableInstallations = /* GraphQL */ `
+  mutation UpdateAvailableInstallations(
+    $input: UpdateAvailableInstallationsInput!
+    $condition: ModelAvailableInstallationsConditionInput
+  ) {
+    updateAvailableInstallations(input: $input, condition: $condition) {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteAvailableInstallations = /* GraphQL */ `
+  mutation DeleteAvailableInstallations(
+    $input: DeleteAvailableInstallationsInput!
+    $condition: ModelAvailableInstallationsConditionInput
+  ) {
+    deleteAvailableInstallations(input: $input, condition: $condition) {
+      id
+      assignedContractor1
+      assignedContractor2
+      startDateTime
+      isAvailable
+      contractor1Phone
+      contractor2Phone
+      day
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const createHomeEvent = /* GraphQL */ `
   mutation CreateHomeEvent(
     $input: CreateHomeEventInput!

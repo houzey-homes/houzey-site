@@ -1,3 +1,15 @@
+type AvailableInstallations @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  assignedContractor1: String
+  assignedContractor2: String
+  startDateTime: AWSDateTime!
+  isAvailable: Boolean
+  contractor1Phone: AWSPhone
+  contractor2Phone: AWSPhone
+  day: AWSDate
+  time: AWSTime
+}
+
 type DollarAmount {
   Dollars: Int
   Cents: Int
