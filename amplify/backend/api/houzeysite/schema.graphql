@@ -1,3 +1,18 @@
+type BetaOrder @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  cartItems: [String]
+  totalPrice: String
+  chosenInstallation: String
+  homeStreet: String
+  homeCity: String
+  homeState: String
+  homeZip: String
+  homeownerFirstName: String
+  homeownerLastName: String
+  homeownerPhone: String
+  homeownerEmail: String
+}
+
 type AvailableInstallations @model @auth(rules: [{allow: public}]) {
   id: ID!
   assignedContractor1: String

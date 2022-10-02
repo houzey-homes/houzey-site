@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react'
 import '../Styles/main.css';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer';
@@ -11,6 +12,24 @@ export default function Checkout(props) {
   const houzeyPrice = itemsPrice * 0.06;
   const laborPrice = 100;
   const totalPrice = houzeyPrice + laborPrice + itemsPrice;
+
+  const [chosenInstallation, setChosenInstallation] = useState('');
+
+  const [homeStreet, setHomestreet] = useState('');
+  const [homeCity, setHomecity] = useState('');
+  const [homeState, setHomestate] = useState('');
+  const [homeZip, setHomezip] = useState('');
+
+  const [homeownerFirstName, setHomeownerFirstName] = useState('');
+  const [homeownerLastName, setHomeownerLastName] = useState('');
+  const [homeownerPhone, setHomeownerPhone] = useState('');
+  const [homeownerEmail, setHomeownerEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const stuff = {cartItems, totalPrice, chosenInstallation, homeStreet, homeCity, homeState, homeZip, homeownerFirstName, homeownerLastName, homeownerPhone, homeownerEmail };
+    console.log(stuff);
+  }
 
   return (
     <>
@@ -42,7 +61,17 @@ export default function Checkout(props) {
             {availableInstallations && availableInstallations.data.listAvailableInstallations.items.map(installation => (
               <div className="Installation" key={installation.id} installation={installation}>
 
-                <span> <label>{installation.day} at {installation.time}</label><input type="radio" name="option" value={installation.day}></input></span>
+                <span> 
+                  <label>
+                      {installation.day} at {installation.time}
+                  </label>
+                  <input 
+                    type="radio" 
+                    name="option" 
+                    value={installation.startDateTime} 
+                    onChange={(e) => setChosenInstallation(e.target.value)}></input>
+                </span>
+
               </div>
             ))}
 
@@ -51,34 +80,67 @@ export default function Checkout(props) {
 
 
         <div className="InnerShoppingCart">
-          <form className="OrderForm">
+          <form 
+            onSubmit={handleSubmit}
+            form id='order-form'
+            className="OrderForm">
             <h5>Enter Address</h5>
             <label>Street: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeStreet}
+              onChange={(e) => setHomestreet(e.target.value)}></input>
             <label>City: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeCity}
+              onChange={(e) => setHomecity(e.target.value)}></input>
             <label>State: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeState}
+              onChange={(e) => setHomestate(e.target.value)}></input>
             <label>Zip: </label>
-            <input type="text" required></input>
-
+            <input 
+              type="text" 
+              required 
+              value={homeZip}
+              onChange={(e) => setHomezip(e.target.value)}></input>
 
             <h5>Enter Contact Information</h5>
             <label>First Name: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeownerFirstName}
+              onChange={(e) => setHomeownerFirstName(e.target.value)}></input>
             <label>Last Name: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeownerLastName}
+              onChange={(e) => setHomeownerLastName(e.target.value)}></input>
             <label>Phone: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeownerPhone}
+              onChange={(e) => setHomeownerPhone(e.target.value)}></input>
             <label>Email: </label>
-            <input type="text" required></input>
+            <input 
+              type="text" 
+              required 
+              value={homeownerEmail}
+              onChange={(e) => setHomeownerEmail(e.target.value)}></input>
           </form>
         </div>
         
-
-
         <div className="InnerShoppingCart">
-          {cartItems.length === 0 && <div>Cart is empty</div>}
+          {cartItems.length === 0 && <div><h3>Your Cart</h3>Cart is empty</div>}
+          {cartItems.length !== 0 && <h3>Your Cart</h3>}
 
           {cartItems.map((item) => (
             <div classname="ConfirmCartItem" key={item.id} className="row">
@@ -130,12 +192,10 @@ export default function Checkout(props) {
             </>
           )}
 
-
-
         </div>
 
         <div className="InnerShoppingCart">
-          <button id="Nav1" className="NavLink1">Place Order</button>
+          <button  form='order-form' id="Nav1" className="NavLink1" onSubmit={handleSubmit}>Place Order</button>
         </div>
 
       </div>

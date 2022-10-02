@@ -14,6 +14,10 @@ export declare class Address {
   constructor(init: ModelInit<Address>);
 }
 
+type BetaOrderMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type AvailableInstallationsMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -40,6 +44,25 @@ type DecorationMetaData = {
 
 type DecorationOrderContractorMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+export declare class BetaOrder {
+  readonly id: string;
+  readonly cartItems?: (string | null)[] | null;
+  readonly totalPrice?: string | null;
+  readonly chosenInstallation?: string | null;
+  readonly homeStreet?: string | null;
+  readonly homeCity?: string | null;
+  readonly homeState?: string | null;
+  readonly homeZip?: string | null;
+  readonly homeownerFirstName?: string | null;
+  readonly homeownerLastName?: string | null;
+  readonly homeownerPhone?: string | null;
+  readonly homeownerEmail?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<BetaOrder, BetaOrderMetaData>);
+  static copyOf(source: BetaOrder, mutator: (draft: MutableModel<BetaOrder, BetaOrderMetaData>) => MutableModel<BetaOrder, BetaOrderMetaData> | void): BetaOrder;
 }
 
 export declare class AvailableInstallations {

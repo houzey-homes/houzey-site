@@ -1,6 +1,84 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createBetaOrder = /* GraphQL */ `
+  mutation CreateBetaOrder(
+    $input: CreateBetaOrderInput!
+    $condition: ModelBetaOrderConditionInput
+  ) {
+    createBetaOrder(input: $input, condition: $condition) {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateBetaOrder = /* GraphQL */ `
+  mutation UpdateBetaOrder(
+    $input: UpdateBetaOrderInput!
+    $condition: ModelBetaOrderConditionInput
+  ) {
+    updateBetaOrder(input: $input, condition: $condition) {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteBetaOrder = /* GraphQL */ `
+  mutation DeleteBetaOrder(
+    $input: DeleteBetaOrderInput!
+    $condition: ModelBetaOrderConditionInput
+  ) {
+    deleteBetaOrder(input: $input, condition: $condition) {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const createAvailableInstallations = /* GraphQL */ `
   mutation CreateAvailableInstallations(
     $input: CreateAvailableInstallationsInput!

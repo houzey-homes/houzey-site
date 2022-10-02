@@ -1,6 +1,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateBetaOrder = /* GraphQL */ `
+  subscription OnCreateBetaOrder {
+    onCreateBetaOrder {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateBetaOrder = /* GraphQL */ `
+  subscription OnUpdateBetaOrder {
+    onUpdateBetaOrder {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteBetaOrder = /* GraphQL */ `
+  subscription OnDeleteBetaOrder {
+    onDeleteBetaOrder {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateAvailableInstallations = /* GraphQL */ `
   subscription OnCreateAvailableInstallations {
     onCreateAvailableInstallations {

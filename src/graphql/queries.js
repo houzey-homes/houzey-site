@@ -1,6 +1,97 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getBetaOrder = /* GraphQL */ `
+  query GetBetaOrder($id: ID!) {
+    getBetaOrder(id: $id) {
+      id
+      cartItems
+      totalPrice
+      chosenInstallation
+      homeStreet
+      homeCity
+      homeState
+      homeZip
+      homeownerFirstName
+      homeownerLastName
+      homeownerPhone
+      homeownerEmail
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listBetaOrders = /* GraphQL */ `
+  query ListBetaOrders(
+    $filter: ModelBetaOrderFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBetaOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        cartItems
+        totalPrice
+        chosenInstallation
+        homeStreet
+        homeCity
+        homeState
+        homeZip
+        homeownerFirstName
+        homeownerLastName
+        homeownerPhone
+        homeownerEmail
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncBetaOrders = /* GraphQL */ `
+  query SyncBetaOrders(
+    $filter: ModelBetaOrderFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncBetaOrders(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        cartItems
+        totalPrice
+        chosenInstallation
+        homeStreet
+        homeCity
+        homeState
+        homeZip
+        homeownerFirstName
+        homeownerLastName
+        homeownerPhone
+        homeownerEmail
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getAvailableInstallations = /* GraphQL */ `
   query GetAvailableInstallations($id: ID!) {
     getAvailableInstallations(id: $id) {
