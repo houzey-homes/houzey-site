@@ -27,7 +27,7 @@
   padding-bottom: 4vh;
 }
 
-.Button {
+.Button, CheckoutButton {
     color: white;
     background-color: #61dafb;
     margin: 15px;
@@ -286,7 +286,7 @@
   color: black;
   top: 40vh;
   right: 2vw;
-  position: fixed;
+  position: absolute;
   overflow-y: scroll;
   white-space: nowrap;
   height: 50vh;
@@ -296,6 +296,13 @@
   border-color: aliceblue;
   border-width: 10px;
   border-radius: 5px;
+}
+
+.InnerShoppingCart {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  color: black;
 }
 
 .DecorationGridArea {
@@ -312,6 +319,32 @@
   border-color: #282c34;
   border-radius: 15px;
   border-width: 2vh;
+}
+
+.Checkout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #282c34;
+  color: #282c34;
+}
+
+.CheckoutBullets {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.InnerShoppingCart {
+  width: calc(25vw + 200px);
+  margin: auto;
+  margin-top: 10px; 
+  margin-bottom: 10px;
+  border:solid;
+  border-color: #282c34;
+  border-width: 3px;
+  padding: 3vh;
+  padding-top: 1vh;
 }
 
 .Img-rotate {

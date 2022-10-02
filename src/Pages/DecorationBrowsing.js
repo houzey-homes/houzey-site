@@ -5,7 +5,6 @@ import Footer from '../Components/Footer'
 import { useLocation } from 'react-router-dom';
 import DecorationItem from '../Components/DecorationItem';
 import ShoppingCart from '../Components/ShoppingCart';
-import Checkout from './Checkout'; 
     
 function DecorationBrowsing(props) {
 
@@ -19,9 +18,7 @@ function DecorationBrowsing(props) {
           <div className="App">
             <UserNav />
               <div className="NewBrowsingHead">
-                <h1>Decoration Browsing Feature - Coming Soon</h1>
-                <div>USER: {location.state.user}</div>
-                <div>CITY: {location.state.city}</div>
+                <h1>Scroll down through the window below to choose what you like. <br></br>Click 'Checkout' at the bottom of the shopping cart to schedule a time and place an order. </h1>
               </div>
               <div className="ShoppingScreen">                       
                 <div className="DecorationGridArea">
@@ -33,12 +30,14 @@ function DecorationBrowsing(props) {
                         onAdd={onAdd}
                         onRemove={onRemove}/>
                     ))}
-                </div>                          
+                </div>     
+                <div className="CartContainer">                    
                 <ShoppingCart 
                   availableInstallations={availableInstallations}
                   cartItems={cartItems} 
                   onAdd={onAdd}
                   onRemove={onRemove} />
+                </div> 
                  
               </div>
             <Footer />
@@ -48,3 +47,6 @@ function DecorationBrowsing(props) {
     );
   }
   export default DecorationBrowsing;
+
+  // <div>Current user: {location.state.user}</div>
+  // <div>City selected: {location.state.city}</div>

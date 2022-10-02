@@ -4,14 +4,15 @@ import {Link} from 'react-router-dom';
 export default function ShoppingCart(props) {
   const { availableInstallations, cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-  console.log(cartItems);
   
   const houzeyPrice = itemsPrice * 0.06;
   const laborPrice = 100;
   const totalPrice = houzeyPrice + laborPrice + itemsPrice;
   return (
+
+    <div>
     <aside className="ShoppingCart">
-      <h2>Cart Items</h2>
+      <h2>Your Cart</h2>
       <div>
         {cartItems.length === 0 && <div>Cart is empty</div>}
         {cartItems.map((item) => (
@@ -66,5 +67,7 @@ export default function ShoppingCart(props) {
         )}
       </div>
     </aside>
+    </div>
+
   );
 }
