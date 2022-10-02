@@ -333,6 +333,7 @@
   list-style-type: none; 
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 .InnerShoppingCart {
@@ -345,6 +346,46 @@
   border-width: 3px;
   padding: 3vh;
   padding-top: 1vh;
+}
+
+.InstallationsBox {
+  height: 25vh;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
+.Installation {
+  padding: 20px;
+}
+
+.OrderButton {
+  color: white;
+  background-color: #61dafb;
+  margin: 15px;
+  padding: 5px;
+  text-decoration: none;
+  border: solid;
+  border-color: white;
+  border-radius: 11px;  
+}
+
+.OrderForm {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.OrderForm label {
+  text-align: left;
+  display: block;
+}
+
+.OrderForm input {
+  width: 100%;
+  padding: 5px 9px;
+  margin: 10px 0;
+  border: 1px solid #282c34;
+  box-sizing: border-box;
+  display: block;
 }
 
 .Img-rotate {
