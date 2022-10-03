@@ -3,8 +3,7 @@
  */
  const aws = require('aws-sdk')
  const ses = new aws.SES()
- const apkEmail = 'apkritikos@houzey.homes'
- const nmEmail = 'nmackenzie@houzey.homes'
+ const source = 'contact@houzey.homes';
 
  exports.handler = async (event) => {
    for (const streamedItem of event.Records) {
@@ -21,13 +20,14 @@
        const homeCity = streamedItem.dynamodb.NewImage.homeCity.S
        const homeState = streamedItem.dynamodb.NewImage.homeState.S
        const homeZip = streamedItem.dynamodb.NewImage.homeZip.S
+       console.log('email', homeownerEmail);
 
        await ses
            .sendEmail({
              Destination: {
-               ToAddresses: [{homeownerEmail}, {apkEmail}, {nmEmail}], 
+               ToAddresses: [{source}], 
              },
-             Source: 'contact@houzey.homes',
+             Source: {source},
              Message: {
                Subject: { Data: 'Your Houzey Order' },
                Body: {

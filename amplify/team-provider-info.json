@@ -18,7 +18,7 @@
       "function": {
         "processorder": {
           "deploymentBucketName": "amplify-houzeysite-main-232819-deployment",
-          "s3Key": "amplify-builds/processorder-694b584c347355444a6a-build.zip"
+          "s3Key": "amplify-builds/processorder-4c327a63534870735a4a-build.zip"
         }
       }
     }

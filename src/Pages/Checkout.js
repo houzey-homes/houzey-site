@@ -1,12 +1,15 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import '../Styles/main.css';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer';
 import { API } from 'aws-amplify';
 import { createBetaOrder } from '../graphql/mutations';
+import emailjs from 'emailjs-com';
 
 export default function Checkout(props) {
+
+  const form = useRef();
 
   const { availableInstallations, cartItems, decorations, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
@@ -27,7 +30,7 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [id, setId] = useState('TBI2');
+  const [id, setId] = useState('TBI25');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +53,22 @@ export default function Checkout(props) {
           homeownerEmail,
         },
       },
+    });
+
+    var templateParams = {
+      homeownerEmail: homeownerEmail,
+      homeownerFirstName: homeownerFirstName,
+      chosenInstallation: chosenInstallation,
+      homeStreet: homeStreet,
+      homeCity: homeCity,
+      totalPrice: totalPrice,
+    };
+
+    emailjs.send('service_2sciwag', 'template_74cj89v', templateParams, 'ejHLYsSf4f-mAIKXu')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
     });
 
   }
@@ -99,24 +118,27 @@ export default function Checkout(props) {
           </div>
         </div>
 
-
         <div className="InnerShoppingCart">
           <form
+            ref={form}
             onSubmit={handleSubmit}
             form id='order-form'
             className="OrderForm">
+            
             <h5>Enter Address</h5>
             <label>Street: </label>
             <input
               type="text"
               required
               value={homeStreet}
+              name="homeStreet"
               onChange={(e) => setHomestreet(e.target.value)}></input>
             <label>City: </label>
             <input
               type="text"
               required
               value={homeCity}
+              name="homeCity"
               onChange={(e) => setHomecity(e.target.value)}></input>
             <label>State: </label>
             <input
@@ -137,6 +159,7 @@ export default function Checkout(props) {
               type="text"
               required
               value={homeownerFirstName}
+              name="homeownerFirstName"
               onChange={(e) => setHomeownerFirstName(e.target.value)}></input>
             <label>Last Name: </label>
             <input
@@ -155,6 +178,7 @@ export default function Checkout(props) {
               type="text"
               required
               value={homeownerEmail}
+              name="homeownerEmail"
               onChange={(e) => setHomeownerEmail(e.target.value)}></input>
           </form>
         </div>
