@@ -32,8 +32,6 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [id, setId] = useState('TBI');
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
