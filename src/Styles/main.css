@@ -321,6 +321,16 @@
   background-color: #282c34;
 }
 
+.OrderConfirmPage {
+  text-align: center;
+  background-color: #61dafb;
+}
+
+.OrderConfirmDiv {
+  margin-top: 15vh;
+  background-color: #61dafb;
+}
+
 .DecorationGridArea {
   display: flex;
   flex-direction: column;
