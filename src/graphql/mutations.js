@@ -94,6 +94,11 @@ export const createAvailableInstallations = /* GraphQL */ `
       contractor2Phone
       day
       time
+      monthAsWord
+      dayOfWeek
+      dayAsNumber
+      yearAsNumber
+      timeAsString
       createdAt
       updatedAt
       _version
@@ -117,6 +122,11 @@ export const updateAvailableInstallations = /* GraphQL */ `
       contractor2Phone
       day
       time
+      monthAsWord
+      dayOfWeek
+      dayAsNumber
+      yearAsNumber
+      timeAsString
       createdAt
       updatedAt
       _version
@@ -140,6 +150,11 @@ export const deleteAvailableInstallations = /* GraphQL */ `
       contractor2Phone
       day
       time
+      monthAsWord
+      dayOfWeek
+      dayAsNumber
+      yearAsNumber
+      timeAsString
       createdAt
       updatedAt
       _version

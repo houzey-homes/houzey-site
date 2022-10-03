@@ -34,7 +34,7 @@ function DecorationBrowsing(props) {
                 <div className="CartContainer">                    
                 <ShoppingCart 
                   availableInstallations={availableInstallations}
-                  cartItems={cartItems} 
+                  cartItems={cartItems}
                   onAdd={onAdd}
                   onRemove={onRemove} />
                 </div> 

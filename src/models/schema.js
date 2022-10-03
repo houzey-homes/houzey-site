@@ -196,6 +196,41 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "monthAsWord": {
+                    "name": "monthAsWord",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "dayOfWeek": {
+                    "name": "dayOfWeek",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "dayAsNumber": {
+                    "name": "dayAsNumber",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "yearAsNumber": {
+                    "name": "yearAsNumber",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "timeAsString": {
+                    "name": "timeAsString",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -961,5 +996,5 @@ export const schema = {
             }
         }
     },
-    "version": "5756f0973942f8972aa489aa07f4500e"
+    "version": "f4b8ecad5d02d12568a2daffab49be12"
 };

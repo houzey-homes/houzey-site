@@ -75,6 +75,11 @@ export declare class AvailableInstallations {
   readonly contractor2Phone?: string | null;
   readonly day?: string | null;
   readonly time?: string | null;
+  readonly monthAsWord?: string | null;
+  readonly dayOfWeek?: string | null;
+  readonly dayAsNumber?: string | null;
+  readonly yearAsNumber?: string | null;
+  readonly timeAsString?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<AvailableInstallations, AvailableInstallationsMetaData>);

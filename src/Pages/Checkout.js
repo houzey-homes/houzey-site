@@ -3,6 +3,8 @@ import { useState } from 'react'
 import '../Styles/main.css';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer';
+import { API } from 'aws-amplify';
+import { createBetaOrder } from '../graphql/mutations';
 
 export default function Checkout(props) {
 
@@ -25,10 +27,31 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const handleSubmit = (e) => {
+  const [id, setId] = useState('TBI2');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const stuff = {cartItems, totalPrice, chosenInstallation, homeStreet, homeCity, homeState, homeZip, homeownerFirstName, homeownerLastName, homeownerPhone, homeownerEmail };
-    console.log(stuff);
+
+    await API.graphql({
+      query: createBetaOrder,
+      variables: {
+        input: {
+          id,
+          cartItems,
+          totalPrice,
+          chosenInstallation,
+          homeStreet,
+          homeCity,
+          homeState,
+          homeZip,
+          homeownerFirstName,
+          homeownerLastName,
+          homeownerPhone,
+          homeownerEmail,
+        },
+      },
+    });
+
   }
 
   return (
@@ -53,22 +76,20 @@ export default function Checkout(props) {
           </ul>
         </div>
 
-
         <div className="InnerShoppingCart">
           <div className="InstallationsBox">
-
 
             {availableInstallations && availableInstallations.data.listAvailableInstallations.items.map(installation => (
               <div className="Installation" key={installation.id} installation={installation}>
 
-                <span> 
+                <span>
                   <label>
-                      {installation.day} at {installation.time}
+                    {installation.day} at {installation.time}
                   </label>
-                  <input 
-                    type="radio" 
-                    name="option" 
-                    value={installation.startDateTime} 
+                  <input
+                    type="radio"
+                    name="option"
+                    value={installation.startDateTime}
                     onChange={(e) => setChosenInstallation(e.target.value)}></input>
                 </span>
 
@@ -80,64 +101,64 @@ export default function Checkout(props) {
 
 
         <div className="InnerShoppingCart">
-          <form 
+          <form
             onSubmit={handleSubmit}
             form id='order-form'
             className="OrderForm">
             <h5>Enter Address</h5>
             <label>Street: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeStreet}
               onChange={(e) => setHomestreet(e.target.value)}></input>
             <label>City: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeCity}
               onChange={(e) => setHomecity(e.target.value)}></input>
             <label>State: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeState}
               onChange={(e) => setHomestate(e.target.value)}></input>
             <label>Zip: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeZip}
               onChange={(e) => setHomezip(e.target.value)}></input>
 
             <h5>Enter Contact Information</h5>
             <label>First Name: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeownerFirstName}
               onChange={(e) => setHomeownerFirstName(e.target.value)}></input>
             <label>Last Name: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeownerLastName}
               onChange={(e) => setHomeownerLastName(e.target.value)}></input>
             <label>Phone: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeownerPhone}
               onChange={(e) => setHomeownerPhone(e.target.value)}></input>
             <label>Email: </label>
-            <input 
-              type="text" 
-              required 
+            <input
+              type="text"
+              required
               value={homeownerEmail}
               onChange={(e) => setHomeownerEmail(e.target.value)}></input>
           </form>
         </div>
-        
+
         <div className="InnerShoppingCart">
           {cartItems.length === 0 && <div><h3>Your Cart</h3>Cart is empty</div>}
           {cartItems.length !== 0 && <h3>Your Cart</h3>}
@@ -195,7 +216,7 @@ export default function Checkout(props) {
         </div>
 
         <div className="InnerShoppingCart">
-          <button  form='order-form' id="Nav1" className="NavLink1" onSubmit={handleSubmit}>Place Order</button>
+          <button form='order-form' id="Nav1" className="NavLink1" onSubmit={handleSubmit}>Place Order</button>
         </div>
 
       </div>
@@ -205,5 +226,3 @@ export default function Checkout(props) {
 
 }
 
-
-// <span>{installation.assignedContractor1} & {installation.assignedContractor2}</span>

@@ -11,12 +11,10 @@ function DecorationItem(props) {
 
     const { item, decoration, onAdd, onRemove } = props;
 
-
     return (        
 
             <div>
                 
-                    
                     <div className="DecorationItemCard" key={decoration.id}>
                         <div className="DecorationItemBox">
 
@@ -44,7 +42,6 @@ function DecorationItem(props) {
                                     )}
                                 </div>
                                 
-                                
                             </div>
 
                         </div>
@@ -65,8 +62,8 @@ function DecorationItem(props) {
                 
             </div>
                
-
   );
 }
 
 export default DecorationItem;
+
