@@ -6,6 +6,8 @@ import Footer from '../Components/Footer';
 import { API } from 'aws-amplify';
 import { createBetaOrder } from '../graphql/mutations';
 import emailjs from 'emailjs-com';
+import {Link} from 'react-router-dom';
+import OrderConfirmation from '../Pages/OrderConfirmation';
 
 export default function Checkout(props) {
 
@@ -30,7 +32,7 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [id, setId] = useState('TBI25');
+  const [id, setId] = useState('TBI26');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -240,7 +242,8 @@ export default function Checkout(props) {
         </div>
 
         <div className="InnerShoppingCart">
-          <button form='order-form' id="Nav1" className="NavLink1" onSubmit={handleSubmit}>Place Order</button>
+        <Link className="Button" to="/OrderConfirmation" ><button form='order-form' id="Nav1" className="NavLink1" onSubmit={handleSubmit}>Place Order</button></Link>
+          
         </div>
 
       </div>

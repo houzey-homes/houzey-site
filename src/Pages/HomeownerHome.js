@@ -1,5 +1,4 @@
 import '../Styles/main.css';
-import {Link} from 'react-router-dom';
 import QuickZipUserForm from '../Components/QuickZipUserForm'
 
 function HomeownerHome () {
@@ -14,4 +13,3 @@ function HomeownerHome () {
 
 export default HomeownerHome;
 
-// <Link to="/Browsing" className="Button">BROWSE DECORATIONS</Link>  

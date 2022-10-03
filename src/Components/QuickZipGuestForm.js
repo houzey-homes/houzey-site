@@ -45,8 +45,6 @@ const QuickZipGuestForm = () => {
 
                   </div>
 
-                  <p>Sign in to use your stored home address</p>
-
                 </div>
 
             </div>

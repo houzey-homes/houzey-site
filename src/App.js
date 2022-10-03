@@ -5,6 +5,7 @@ import Homeowner from './Components/HomeownerLogin';
 import PageNotFound404 from './Pages/PageNotFound404'; 
 import DecorationBrowsing from './Pages/DecorationBrowsing';
 import Checkout from './Pages/Checkout';
+import OrderConfirmation from './Pages/OrderConfirmation';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from './graphql/queries';
 import { useEffect, useState } from 'react';
@@ -73,6 +74,7 @@ function App() {
         <Route path="/Homeowner" element={<Homeowner availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="/Browsing" element={<DecorationBrowsing availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="/Checkout" element={<Checkout availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
+        <Route path="/OrderConfirmation" element={<OrderConfirmation availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="*" element={<PageNotFound404 />} />
       </Routes>
   );
