@@ -241,9 +241,8 @@ export default function Checkout(props) {
 
         </div>
 
-        <div className="InnerShoppingCart">
-        <Link className="Button" to="/OrderConfirmation" ><button form='order-form' id="Nav1" className="NavLink1" onSubmit={handleSubmit}>Place Order</button></Link>
-          
+        <div id="OrderButton" className="InnerShoppingCart">
+          <Link id="Nav1" className="NavLink1" to="/OrderConfirmation" form='order-form' onSubmit={handleSubmit}>Place Order</Link>
         </div>
 
       </div>
