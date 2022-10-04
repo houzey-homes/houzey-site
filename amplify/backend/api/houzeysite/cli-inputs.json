@@ -17,6 +17,10 @@
         "cognitoUserPoolId": "authhouzeysite"
       }
     ],
-    "conflictResolution": {}
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
   }
 }

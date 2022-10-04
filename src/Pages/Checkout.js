@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef, useId } from 'react'
 import '../Styles/main.css';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer';
@@ -12,16 +12,13 @@ import { useNavigate } from 'react-router-dom';
 export default function Checkout(props) {
 
   const navigate = useNavigate();
-
   const form = useRef();
 
   const { availableInstallations, cartItems, decorations, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-
   const houzeyPrice = itemsPrice * 0.06;
   const laborPrice = 100;
   const totalPrice = houzeyPrice + laborPrice + itemsPrice;
-
   const [chosenInstallation, setChosenInstallation] = useState('');
 
   const [homeStreet, setHomestreet] = useState('');
@@ -34,12 +31,16 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [id, setId] = useState('TBI443487663');
+  const [id, setId] = useState('');
+  const tempId = useId();
 
+  useEffect(() => {
+    setId(tempId);
+    
+  }, [tempId]);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log('Install =', chosenInstallation);
 
     await API.graphql({
       query: createBetaOrder,
@@ -72,12 +73,12 @@ export default function Checkout(props) {
 
     emailjs.send('service_2sciwag', 'template_74cj89v', templateParams, 'ejHLYsSf4f-mAIKXu')
     .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
+       //console.log('SUCCESS!', response.status, response.text);
+       navigate(`/OrderConfirmation`);
     }, function(error) {
-       console.log('FAILED...', error);
+      alert('Something went wrong. Please try again. Contact support@houzey.homes for help if the problem continues.')
+      //console.log('FAILED...', error);
     });
-
-    navigate(`/OrderConfirmation`);
 
   }
 
