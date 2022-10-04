@@ -1,7 +1,0 @@
-[
-  {
-    "Action": ["ses:SendEmail"],
-    "Effect": "Allow",
-    "Resource": ["arn:aws:ses:*:*:identity/contact@houzey.homes"]
-  }
-]

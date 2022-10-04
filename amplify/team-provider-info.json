@@ -14,12 +14,6 @@
     "categories": {
       "auth": {
         "houzeysite": {}
-      },
-      "function": {
-        "processorder": {
-          "deploymentBucketName": "amplify-houzeysite-main-232819-deployment",
-          "s3Key": "amplify-builds/processorder-4c327a63534870735a4a-build.zip"
-        }
       }
     }
   }

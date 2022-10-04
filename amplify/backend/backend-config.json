@@ -76,21 +76,5 @@
       "dependsOn": []
     }
   },
-  "function": {
-    "processorder": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "api",
-          "resourceName": "houzeysite",
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
-          ]
-        }
-      ]
-    }
-  }
+  "function": {}
 }
