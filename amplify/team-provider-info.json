@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-houzeysite-main-232819-unauthRole",
       "StackName": "amplify-houzeysite-main-232819",
       "StackId": "arn:aws:cloudformation:us-east-1:517856304093:stack/amplify-houzeysite-main-232819/127eb160-3ebc-11ed-bfdd-12e6cae9ffb5",
-      "AmplifyAppId": "d3kypjfmk883zt"
+      "AmplifyAppId": "d3kypjfmk883zt",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-houzeysite-main-232819-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {

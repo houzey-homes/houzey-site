@@ -120,10 +120,16 @@ export const schema = {
                                 "allow": "public",
                                 "operations": [
                                     "create",
-                                    "update",
-                                    "delete",
                                     "read"
                                 ]
+                            },
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "read"
+                                ],
+                                "provider": "iam"
                             }
                         ]
                     }

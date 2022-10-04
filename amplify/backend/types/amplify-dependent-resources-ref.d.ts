@@ -8,6 +8,10 @@ export type AmplifyDependentResourcesAttributes = {
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
             "AppClientID": "string"
+        },
+        "userPoolGroups": {
+            "homeownersGroupRole": "string",
+            "contractorsGroupRole": "string"
         }
     },
     "api": {

@@ -1,0 +1,10 @@
+[
+  {
+    "groupName": "homeowners",
+    "precedence": 1
+  },
+  {
+    "groupName": "contractors",
+    "precedence": 2
+  }
+]
