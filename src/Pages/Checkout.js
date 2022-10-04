@@ -39,7 +39,6 @@ export default function Checkout(props) {
       query: createBetaOrder,
       variables: {
         input: {
-          id,
           cartItems,
           totalPrice,
           chosenInstallation,
