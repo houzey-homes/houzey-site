@@ -32,6 +32,8 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
+  const [id, setId] = useState();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,6 +41,7 @@ export default function Checkout(props) {
       query: createBetaOrder,
       variables: {
         input: {
+          id,
           cartItems,
           totalPrice,
           chosenInstallation,
