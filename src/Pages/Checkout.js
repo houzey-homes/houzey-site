@@ -7,9 +7,11 @@ import { API } from 'aws-amplify';
 import { createBetaOrder } from '../graphql/mutations';
 import emailjs from 'emailjs-com';
 import {Link} from 'react-router-dom';
-import OrderConfirmation from '../Pages/OrderConfirmation';
+import { useNavigate } from 'react-router-dom'; 
 
 export default function Checkout(props) {
+
+  const navigate = useNavigate();
 
   const form = useRef();
 
@@ -32,10 +34,12 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [id, setId] = useState();
+  const [id, setId] = useState('TBI443487663');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log('Install =', chosenInstallation);
 
     await API.graphql({
       query: createBetaOrder,
@@ -72,6 +76,8 @@ export default function Checkout(props) {
     }, function(error) {
        console.log('FAILED...', error);
     });
+
+    navigate(`/OrderConfirmation`);
 
   }
 
@@ -242,7 +248,7 @@ export default function Checkout(props) {
         </div>
 
         <div id="OrderButton" className="InnerShoppingCart">
-          <Link id="Nav1" className="NavLink1" to="/OrderConfirmation" form='order-form' onSubmit={handleSubmit}>Place Order</Link>
+          <button id="Nav1" className="NavLink1" to="/OrderConfirmation" form='order-form' onSubmit={handleSubmit}>Place Order</button>
         </div>
 
       </div>
@@ -251,4 +257,3 @@ export default function Checkout(props) {
   );
 
 }
-

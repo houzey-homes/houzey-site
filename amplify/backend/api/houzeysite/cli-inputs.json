@@ -17,10 +17,6 @@
         "cognitoUserPoolId": "authhouzeysite"
       }
     ],
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "AUTOMERGE"
-      }
-    }
+    "conflictResolution": {}
   }
 }
