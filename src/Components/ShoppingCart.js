@@ -1,6 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+const scrollToTop = () =>{
+  window.scrollTo({
+    top: 0, 
+    behavior: 'smooth'
+    /* you can also use 'auto' behaviour
+       in place of 'smooth' */
+  });
+};
+
 export default function ShoppingCart(props) {
   const { availableInstallations, cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
@@ -61,7 +70,7 @@ export default function ShoppingCart(props) {
             </div>
             <hr />
             <div className="row">
-                <Link availableInstallations={availableInstallations} className="Button" to="/Checkout" >Checkout</Link>
+                <Link availableInstallations={availableInstallations} onClick={scrollToTop} className="Button" to="/Checkout" >Checkout</Link>
             </div>
           </>
         )}

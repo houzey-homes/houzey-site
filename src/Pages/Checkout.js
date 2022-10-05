@@ -30,20 +30,17 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log('cartItems: ', cartItems);
-    console.log('totalPrice: ', totalPrice);
-    console.log('chosenInstallation: ', chosenInstallation);
-    console.log('homeStreet: ', homeStreet);
-    console.log('homeCity: ', homeCity);
-    console.log('homeState: ', homeState);
-    console.log('homeZip: ', homeZip);
-    console.log('homeownerFirstName: ', homeownerFirstName);
-    console.log('homeownerLastName: ', homeownerLastName);
-    console.log('homeownerPhone: ', homeownerPhone);
-    console.log('homeownerEmail: ', homeownerEmail);
 
     await API.graphql({
       query: createBetaOrder,
@@ -251,7 +248,7 @@ export default function Checkout(props) {
         </div>
 
         <div id="OrderButton" className="InnerShoppingCart">
-          <button id="Nav1" className="NavLink1" form='order-form' onSubmit={handleSubmit}>Place Order</button>
+          <button id="Nav1" className="NavLink1" form='order-form' onClick={scrollToTop} onSubmit={handleSubmit}>Place Order</button>
         </div>
 
       </div>
