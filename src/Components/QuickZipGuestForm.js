@@ -8,6 +8,15 @@ const QuickZipGuestForm = () => {
 
   const navigate = useNavigate();
 
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
   const handleQuickZipGuestFormSubmit = (e) => {
     e.preventDefault();
     navigate('/Browsing', { state: { user: useremail, city: usercity } });
@@ -40,7 +49,7 @@ const QuickZipGuestForm = () => {
                         <option value="Peabody">Peabody</option>
                         <option value="Lynn">Lynn</option>
                       </select> 
-                      <button className="Button">GO</button>
+                      <button onClick={scrollToTop} className="Button">GO</button>
                     </form>
 
                   </div>

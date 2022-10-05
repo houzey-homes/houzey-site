@@ -9,6 +9,15 @@ Auth.currentAuthenticatedUser({
 }).then(user => (username = user.attributes.email))
 .catch(err => console.log(err));
 
+const scrollToTop = () =>{
+  window.scrollTo({
+    top: 0, 
+    behavior: 'smooth'
+    /* you can also use 'auto' behaviour
+       in place of 'smooth' */
+  });
+};
+
 const QuickZipForm = () => {
   const [usercity, setUsercity] = useState('');
   
@@ -42,7 +51,7 @@ const QuickZipForm = () => {
                         <option value="Peabody">Peabody</option>
                         <option value="Lynn">Lynn</option>
                       </select> 
-                      <button className="Button">GO</button>
+                      <button onClick={scrollToTop} className="Button">GO</button>
                     </form>
 
                   </div>
