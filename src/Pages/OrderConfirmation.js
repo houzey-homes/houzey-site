@@ -1,5 +1,4 @@
 import '../Styles/main.css';
-import logo from '../Images/house-logo.png';
 import Nav from '../Components/Nav'
 import Footer from '../Components/Footer'
 

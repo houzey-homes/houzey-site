@@ -6,8 +6,7 @@ import Footer from '../Components/Footer';
 import { API } from 'aws-amplify';
 import { createBetaOrder } from '../graphql/mutations';
 import emailjs from 'emailjs-com';
-import {Link} from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 export default function Checkout(props) {
 
@@ -31,22 +30,25 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [id, setId] = useState('');
-  const tempId = useId();
-
-  useEffect(() => {
-    setId(tempId);
-    
-  }, [tempId]);
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log('cartItems: ', cartItems);
+    console.log('totalPrice: ', totalPrice);
+    console.log('chosenInstallation: ', chosenInstallation);
+    console.log('homeStreet: ', homeStreet);
+    console.log('homeCity: ', homeCity);
+    console.log('homeState: ', homeState);
+    console.log('homeZip: ', homeZip);
+    console.log('homeownerFirstName: ', homeownerFirstName);
+    console.log('homeownerLastName: ', homeownerLastName);
+    console.log('homeownerPhone: ', homeownerPhone);
+    console.log('homeownerEmail: ', homeownerEmail);
 
     await API.graphql({
       query: createBetaOrder,
       variables: {
         input: {
-          id,
           cartItems,
           totalPrice,
           chosenInstallation,
@@ -72,13 +74,13 @@ export default function Checkout(props) {
     };
 
     emailjs.send('service_2sciwag', 'template_74cj89v', templateParams, 'ejHLYsSf4f-mAIKXu')
-    .then(function(response) {
-       //console.log('SUCCESS!', response.status, response.text);
-       navigate(`/OrderConfirmation`);
-    }, function(error) {
-      alert('Something went wrong. Please try again. Contact support@houzey.homes for help if the problem continues.')
-      //console.log('FAILED...', error);
-    });
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        navigate(`/OrderConfirmation`);
+      }, function (error) {
+        alert('Something went wrong. Please try again. Contact support@houzey.homes for help if the problem continues.')
+        console.log('FAILED...', error);
+      });
 
   }
 
@@ -112,7 +114,7 @@ export default function Checkout(props) {
 
                 <span>
                   <label>
-                    {installation.day} at {installation.time}
+                    {installation.dayOfWeek}: {installation.monthAsWord} {installation.dayAsNumber}, at {installation.timeAsString}
                   </label>
                   <input
                     type="radio"
@@ -133,7 +135,7 @@ export default function Checkout(props) {
             onSubmit={handleSubmit}
             form id='order-form'
             className="OrderForm">
-            
+
             <h5>Enter Address</h5>
             <label>Street: </label>
             <input
@@ -249,7 +251,7 @@ export default function Checkout(props) {
         </div>
 
         <div id="OrderButton" className="InnerShoppingCart">
-          <button id="Nav1" className="NavLink1" to="/OrderConfirmation" form='order-form' onSubmit={handleSubmit}>Place Order</button>
+          <button id="Nav1" className="NavLink1" form='order-form' onSubmit={handleSubmit}>Place Order</button>
         </div>
 
       </div>
