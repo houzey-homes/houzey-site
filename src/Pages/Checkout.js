@@ -104,8 +104,12 @@ export default function Checkout(props) {
           </ul>
         </div>
 
+        
+
         <div className="InnerShoppingCart">
           <div className="InstallationsBox">
+
+            <Calendar />
 
             {availableInstallations && availableInstallations.data.listAvailableInstallations.items.map(installation => (
               <div className="Installation" key={installation.id} installation={installation}>
