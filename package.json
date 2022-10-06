@@ -13,6 +13,7 @@
     "node-mailjet": "^5.1.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-calendar": "^3.9.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.15.1",
     "react-router-dom": "^6.4.0",

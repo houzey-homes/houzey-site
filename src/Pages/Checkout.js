@@ -7,6 +7,7 @@ import { API } from 'aws-amplify';
 import { createBetaOrder } from '../graphql/mutations';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
+import Calendar from 'react-calendar';
 
 export default function Checkout(props) {
 
