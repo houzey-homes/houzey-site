@@ -44,7 +44,7 @@ function Home () {
             <body className="App-body">
                 <h1>Let our Houzey Helpers, help you.</h1>
                 <div className="BulletinList">
-                    <h3>Use our website or app to purchase or rent decorations.</h3>
+                    <h3>Use our website or app to purchase decorations.</h3>
                     <h3>Schedule a time that works for you.</h3>
                     <h3>Then, just wait for our Houzey Helpers to show up.</h3>
                     <h3>Watch our team do everything - from installation to takedown.</h3>
