@@ -28,7 +28,7 @@ function DecorationBrowsing(props) {
           <div className="BrowsingPage">
             <UserNav />
               <div className="NewBrowsingHead">
-                <h1>Scroll down through the window below to choose what you like. <br></br>Click 'Checkout' at the bottom of the shopping cart to schedule a time and place an order. </h1>
+                <h1>Scroll through the window below to choose decorations you like. <br></br>Click 'Checkout' to continue. </h1>
               </div>
               <div className="ShoppingScreen">                       
                 <div className="DecorationGridArea">

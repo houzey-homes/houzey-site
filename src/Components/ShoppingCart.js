@@ -19,7 +19,7 @@ export default function ShoppingCart(props) {
   const totalPrice = houzeyPrice + laborPrice + itemsPrice;
   return (
 
-    <div>
+    <div className="CartWrapper">
       <aside>
         <h2>Your Cart</h2>
         <div>

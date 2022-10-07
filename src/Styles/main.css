@@ -322,13 +322,22 @@
   border-radius: 5px;
 }
 
+.CartWrapper {
+ display: flex;
+ flex-direction: column;
+ width: 100%
+}
+
 .ShoppingCartSection1 {
-  height: 15vh;
+  height: 25vh;
   padding-left: 1vw;
   padding-right: 1vw;
   overflow-y: scroll;
   white-space: nowrap;
   background-color: white;
+  border: solid;
+  border-color: gray;
+  border-width: 1px;
 }
 
 .InnerCheckoutSection {
