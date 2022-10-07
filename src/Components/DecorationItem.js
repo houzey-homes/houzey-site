@@ -18,7 +18,7 @@ function DecorationItem(props) {
                     <div className="DecorationItemCard" key={decoration.id}>
                         <div className="DecorationItemBox">
 
-                            <h5>{decoration.name}<br></br>{decoration.price}</h5>
+                            <h5>{decoration.name}<br></br>${decoration.price}</h5>
                             <img src={decoration.imglink} className="DecorationItemImage" alt="decoration" />
 
                             <div className="DecorationItemCartOptions"> 

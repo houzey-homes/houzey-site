@@ -5,6 +5,16 @@ import Footer from '../Components/Footer'
 import { useLocation } from 'react-router-dom';
 import DecorationItem from '../Components/DecorationItem';
 import ShoppingCart from '../Components/ShoppingCart';
+import {Link} from 'react-router-dom';
+
+const scrollToTop = () =>{
+  window.scrollTo({
+    top: 0, 
+    behavior: 'smooth'
+    /* you can also use 'auto' behaviour
+       in place of 'smooth' */
+  });
+};
     
 function DecorationBrowsing(props) {
 
@@ -15,7 +25,7 @@ function DecorationBrowsing(props) {
     return (
  
         <main>
-          <div className="App">
+          <div className="BrowsingPage">
             <UserNav />
               <div className="NewBrowsingHead">
                 <h1>Scroll down through the window below to choose what you like. <br></br>Click 'Checkout' at the bottom of the shopping cart to schedule a time and place an order. </h1>
@@ -31,13 +41,15 @@ function DecorationBrowsing(props) {
                         onRemove={onRemove}/>
                     ))}
                 </div>     
+
                 <div className="CartContainer">                    
-                <ShoppingCart 
-                  availableInstallations={availableInstallations}
-                  cartItems={cartItems}
-                  onAdd={onAdd}
-                  onRemove={onRemove} />
-                </div> 
+                  <ShoppingCart 
+                    availableInstallations={availableInstallations}
+                    cartItems={cartItems}
+                    onAdd={onAdd}
+                    onRemove={onRemove} />
+                    
+                </div>              
                  
               </div>
             <Footer />

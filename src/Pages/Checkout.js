@@ -87,7 +87,7 @@ export default function Checkout(props) {
       <UserNav />
       <div className="Checkout">
 
-        <div className="InnerShoppingCart">
+        <div className="InnerCheckoutSection">
           <h3>Checkout</h3>
           <ul className="CheckoutBullets">
             <li>- Scroll through the available installations below and pick a time that works for you. Takedown services will be automatically scheduled for the same time 30 days after installation.</li>
@@ -104,12 +104,12 @@ export default function Checkout(props) {
           </ul>
         </div>
 
-        
+        <div className="InnerCheckoutSection">
+          <Calendar />
+        </div>
 
-        <div className="InnerShoppingCart">
+        <div className="InnerCheckoutSection">
           <div className="InstallationsBox">
-
-            <Calendar />
 
             {availableInstallations && availableInstallations.data.listAvailableInstallations.items.map(installation => (
               <div className="Installation" key={installation.id} installation={installation}>
@@ -131,7 +131,7 @@ export default function Checkout(props) {
           </div>
         </div>
 
-        <div className="InnerShoppingCart">
+        <div className="InnerCheckoutSection">
           <form
             ref={form}
             onSubmit={handleSubmit}
@@ -196,7 +196,7 @@ export default function Checkout(props) {
           </form>
         </div>
 
-        <div className="InnerShoppingCart">
+        <div className="InnerCheckoutSection">
           {cartItems.length === 0 && <div><h3>Your Cart</h3>Cart is empty</div>}
           {cartItems.length !== 0 && <h3>Your Cart</h3>}
 
@@ -252,7 +252,7 @@ export default function Checkout(props) {
 
         </div>
 
-        <div id="OrderButton" className="InnerShoppingCart">
+        <div id="OrderButton" className="InnerCheckoutSection">
           <button id="Nav1" className="NavLink1" form='order-form' onClick={scrollToTop} onSubmit={handleSubmit}>Place Order</button>
         </div>
 

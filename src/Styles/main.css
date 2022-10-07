@@ -27,7 +27,7 @@
   padding-bottom: 4vh;
 }
 
-.Button {
+.Button, .CheckoutButton {
     color: white;
     background-color: #61dafb;
     margin: 15px;
@@ -38,7 +38,7 @@
     border-radius: 11px;
 }
 
-.Button:hover  {
+.Button:hover, .CheckoutButton:hover  {
   color: hotpink;
   border-color: hotpink;
 }
@@ -174,6 +174,11 @@
   color: white;
 }
 
+.BrowsingPage {
+  text-align: center;
+  height: 100%;
+}
+
 .BrowsingHead {
   background-color: rgb(167, 128, 219);
 }
@@ -274,38 +279,66 @@
 
 .ShoppingScreen {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  height: 70vh;
   align-items: center;
   justify-content: center;
   padding: 10px;
   background-color: cornflowerblue;
+  justify-content: space-evenly;
 }
 
-.ShoppingCart {
-  background-color: aliceblue;
-  color: black;
-  top: 40vh;
-  right: 2vw;
-  position: absolute;
+.DecorationGridArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: cornflowerblue;
   overflow-y: scroll;
   white-space: nowrap;
-  height: 50vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  height: 100%;
+  width: 60%;
+  border: solid;
+  border-color: #282c34;
+  border-radius: 15px;
+  border-width: 2vh;
+}
+
+.CartContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: aliceblue;
+  color: black;
+  height: 100%;
+  width: 30%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
   border: solid;
   border-color: aliceblue;
   border-width: 10px;
   border-radius: 5px;
 }
 
-.InnerShoppingCart {
+.ShoppingCartSection1 {
+  height: 15vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  overflow-y: scroll;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.InnerCheckoutSection {
   display: flex;
   flex-direction: column;
   background-color: aliceblue;
   color: black;
 }
 
-.InnerShoppingCart {
+.InnerCheckoutSection {
   width: calc(25vw + 200px);
   margin: auto;
   margin-top: 10px; 
@@ -315,6 +348,7 @@
   border-width: 3px;
   padding: 3vh;
   padding-top: 1vh;
+  background-color: white;
 }
 
 #OrderButton {
@@ -329,22 +363,6 @@
 .OrderConfirmDiv {
   margin-top: 15vh;
   background-color: #61dafb;
-}
-
-.DecorationGridArea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  background-color: cornflowerblue;
-  overflow-y: scroll;
-  white-space: nowrap;
-  height: 70vh;
-  width: calc(35vw + 150px);
-  border: solid;
-  border-color: #282c34;
-  border-radius: 15px;
-  border-width: 2vh;
 }
 
 .Checkout {
@@ -411,12 +429,31 @@
   padding-bottom: 50px;
 }
 
-@media only screen and (max-width: 1280px) {
-  .ShoppingCart {
-    position: relative;
-    top: 10px;
+@media only screen and (max-width: 750px) {
+  .ShoppingScreen {
+    flex-direction: column;
+    height: 100%;
+  }
+  .CartContainer, .DecorationGridArea {
+    width: 95%;
+  }
+  .DecorationGridArea {
+    height: 90vh;
     margin-bottom: 10px;
-    right: 0;
+  }
+}
+
+@media only screen and (max-height: 665px) {
+  .ShoppingScreen {
+    flex-direction: column;
+    height: 100%;
+  }
+  .CartContainer, .DecorationGridArea {
+    width: 95%;
+  }
+  .DecorationGridArea {
+    height: 90vh;
+    margin-bottom: 10px;
   }
 }
 
