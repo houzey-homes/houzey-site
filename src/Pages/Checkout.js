@@ -1,6 +1,7 @@
 import React from 'react';
-import { useState, useEffect, useRef, useId } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import '../Styles/main.css';
+import 'react-calendar/dist/Calendar.css';
 import UserNav from '../Components/UserNav.js'
 import Footer from '../Components/Footer';
 import { API } from 'aws-amplify';
@@ -14,7 +15,7 @@ export default function Checkout(props) {
   const navigate = useNavigate();
   const form = useRef();
 
-  const { availableInstallations, cartItems, decorations, onAdd, onRemove } = props;
+  const { availableInstallations, cartItems, decorations, onAdd, onRemove, updateCalendarSelection } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const houzeyPrice = itemsPrice * 0.06;
   const laborPrice = 100;
@@ -31,9 +32,16 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const scrollToTop = () =>{
+  const [value, setValue] = useState(new Date());
+
+  function onChange(nextValue) {
+    setValue(nextValue);
+    updateCalendarSelection(nextValue);
+  }
+
+  const scrollToTop = () => {
     window.scrollTo({
-      top: 0, 
+      top: 0,
       behavior: 'smooth'
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
@@ -90,7 +98,7 @@ export default function Checkout(props) {
         <div className="InnerCheckoutSection">
           <h3>Checkout</h3>
           <ul className="CheckoutBullets">
-            <li>- Scroll through the available installations below and pick a time that works for you. Takedown services will be automatically scheduled for the same time 30 days after installation.</li>
+            <li>- Use the calendar below to pick a date, then select an available install time that works for you. Takedown services will be automatically scheduled for the same time 30 days after installation.</li>
             <br></br>
             <li>- Enter the address of the home being decorated, your phone number, and your email address.</li>
             <br></br>
@@ -105,15 +113,22 @@ export default function Checkout(props) {
         </div>
 
         <div className="InnerCheckoutSection">
-          <Calendar />
+          <Calendar
+            onChange={onChange}
+            value={value}
+          />
         </div>
-
+        
         <div className="InnerCheckoutSection">
           <div className="InstallationsBox">
 
+
+
+            {!availableInstallations && (<div>No available installation times found.</div>)}
+
             {availableInstallations && availableInstallations.data.listAvailableInstallations.items.map(installation => (
               <div className="Installation" key={installation.id} installation={installation}>
-
+                
                 <span>
                   <label>
                     {installation.dayOfWeek}: {installation.monthAsWord} {installation.dayAsNumber}, at {installation.timeAsString}

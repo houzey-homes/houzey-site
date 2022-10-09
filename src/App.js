@@ -12,19 +12,47 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
+  const [selectedYear, setSelectedYear] = useState('No Date Selected');
+  const [selectedMonth, setSelectedMonth] = useState('No Date Selected');
+  const [selectedDay, setSelectedDay] = useState('No Date Selected');
+
+  const updateCalendarSelection = (date) => {
+
+     const dateString = date.toString();
+     const dateArray = dateString.split(' ');
+
+     const month = dateArray[1];
+     const day = dateArray[2];
+     const year = dateArray[3];
+     
+     setSelectedYear(year);
+     setSelectedMonth(month);
+     setSelectedDay(day);
+     
+  };
+  
   const [availableInstallations, setAvailableInstallations] = useState();
+
   useEffect(() => {
+
       const pullData = async () => {
+
+        let filter = {
+          and: [{ yearAsNumber: { contains: selectedYear } },
+            { monthAsWord: { contains: selectedMonth } },
+            { dayAsNumber: { contains: selectedDay } }]
+        };
+
+        console.log('filter', filter);
       
-      const contractorEvents = await API.graphql(
-        graphqlOperation(queries.listAvailableInstallations)
-      );    
+      const contractorEvents = await API.graphql( graphqlOperation(queries.listAvailableInstallations, { filter: filter } ));    
+             //graphqlOperation(queries.listAvailableInstallations, { filter: { yearAsNumber: { contains: selectedYear}, monthAsWord: { contains: selectedMonth}, dayAsNumber: { contains: selectedDay} } })
 
       setAvailableInstallations(contractorEvents);
 
      }
      pullData()
-  }, [])
+  }, [selectedYear, selectedMonth, selectedDay])
 
   const [cartItems, setCartItems] = useState([]);
   const [decorations, setDecorations] = useState();
@@ -73,7 +101,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Homeowner" element={<Homeowner availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="/Browsing" element={<DecorationBrowsing availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
-        <Route path="/Checkout" element={<Checkout availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
+        <Route path="/Checkout" element={<Checkout availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} updateCalendarSelection={updateCalendarSelection}/>} />
         <Route path="/OrderConfirmation" element={<OrderConfirmation availableInstallations={availableInstallations} cartItems={cartItems} decorations={decorations} onAdd={onAdd} onRemove={onRemove} />} />
         <Route path="*" element={<PageNotFound404 />} />
       </Routes>
