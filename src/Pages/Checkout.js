@@ -124,16 +124,16 @@ export default function Checkout(props) {
 
         <div className="InnerCheckoutSection">
               <div className="InstallationsBox">
-                  <h5>Any available installations for selected date will appear here.</h5>
+                  <h5>Available installations</h5>
 
                   {(() => {
                   if (value === '') {
                     return (
-                      <div>No date selected.</div>
+                      <div className="Installation">No date selected.</div>
                     )
                   } else if (availableInstallations.data.listAvailableInstallations.items.length === 0) {
                     return (
-                      <div>No available installation found for this date.</div>
+                      <div className="Installation">No available installations found</div>
                     )
                   } else {
                     return (
