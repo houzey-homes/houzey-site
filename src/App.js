@@ -28,6 +28,8 @@ function App() {
      setSelectedYear(year);
      setSelectedMonth(month);
      setSelectedDay(day);
+
+     
      
   };
   
@@ -46,7 +48,6 @@ function App() {
         console.log('filter', filter);
       
       const contractorEvents = await API.graphql( graphqlOperation(queries.listAvailableInstallations, { filter: filter } ));    
-             //graphqlOperation(queries.listAvailableInstallations, { filter: { yearAsNumber: { contains: selectedYear}, monthAsWord: { contains: selectedMonth}, dayAsNumber: { contains: selectedDay} } })
 
       setAvailableInstallations(contractorEvents);
 

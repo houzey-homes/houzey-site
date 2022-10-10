@@ -16,6 +16,7 @@ export default function Checkout(props) {
   const form = useRef();
 
   const { availableInstallations, cartItems, decorations, onAdd, onRemove, updateCalendarSelection } = props;
+  console.log('av ins ', availableInstallations);
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const houzeyPrice = itemsPrice * 0.06;
   const laborPrice = 100;
@@ -32,7 +33,8 @@ export default function Checkout(props) {
   const [homeownerPhone, setHomeownerPhone] = useState('');
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
-  const [value, setValue] = useState(new Date());
+  const [value, setValue] = useState('');
+  console.log('value ', value);
 
   function onChange(nextValue) {
     setValue(nextValue);
@@ -113,39 +115,52 @@ export default function Checkout(props) {
         </div>
 
         <div className="InnerCheckoutSection">
+        <h5>Select a date.</h5>
           <Calendar
             onChange={onChange}
             value={value}
           />
         </div>
-        
+
         <div className="InnerCheckoutSection">
-          <div className="InstallationsBox">
+              <div className="InstallationsBox">
+                  <h5>Any available installations for selected date will appear here.</h5>
 
-
-
-            {!availableInstallations && (<div>No available installation times found.</div>)}
-
-            {availableInstallations && availableInstallations.data.listAvailableInstallations.items.map(installation => (
-              <div className="Installation" key={installation.id} installation={installation}>
-                
-                <span>
-                  <label>
-                    {installation.dayOfWeek}: {installation.monthAsWord} {installation.dayAsNumber}, at {installation.timeAsString}
-                  </label>
-                  <input
-                    type="radio"
-                    name="option"
-                    value={installation.startDateTime}
-                    onChange={(e) => setChosenInstallation(e.target.value)}></input>
-                </span>
-
+                  {(() => {
+                  if (value === '') {
+                    return (
+                      <div>No date selected.</div>
+                    )
+                  } else if (availableInstallations.data.listAvailableInstallations.items.length === 0) {
+                    return (
+                      <div>No available installation found for this date.</div>
+                    )
+                  } else {
+                    return (
+                      availableInstallations.data.listAvailableInstallations.items.map(installation => (
+            
+                        <div className="Installation" key={installation.id} installation={installation}>
+                          
+                          <span>
+                            <label>
+                              {installation.dayOfWeek}: {installation.monthAsWord} {installation.dayAsNumber}, at {installation.timeAsString}
+                            </label>
+                            <input
+                              type="radio"
+                              name="option"
+                              value={installation.startDateTime}
+                              onChange={(e) => setChosenInstallation(e.target.value)}></input>
+                          </span>
+          
+                        </div>
+                      ))
+                    )
+                  } 
+                  })()}
+               
               </div>
-            ))}
-
-          </div>
-        </div>
-
+        </div>       
+         
         <div className="InnerCheckoutSection">
           <form
             ref={form}
