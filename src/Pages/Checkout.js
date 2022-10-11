@@ -16,7 +16,6 @@ export default function Checkout(props) {
   const form = useRef();
 
   const { availableInstallations, cartItems, decorations, onAdd, onRemove, updateCalendarSelection } = props;
-  console.log('av ins ', availableInstallations);
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const houzeyPrice = itemsPrice * 0.06;
   const laborPrice = 100;
@@ -34,7 +33,6 @@ export default function Checkout(props) {
   const [homeownerEmail, setHomeownerEmail] = useState('');
 
   const [value, setValue] = useState('');
-  console.log('value ', value);
 
   function onChange(nextValue) {
     setValue(nextValue);
