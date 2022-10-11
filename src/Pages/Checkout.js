@@ -51,6 +51,18 @@ export default function Checkout(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const dateString = chosenInstallation.toString();
+    const dateArray = dateString.split('-');
+
+    const year = dateArray[0];
+    const month = dateArray[1];
+
+    const remainder = dateArray[2];
+    const day = remainder.substring(0, 2);
+    const time = remainder.substring(3, 11);
+
+    const items = JSON.stringify(cartItems, null, 4);
+
     await API.graphql({
       query: createBetaOrder,
       variables: {
@@ -73,10 +85,14 @@ export default function Checkout(props) {
     var templateParams = {
       homeownerEmail: homeownerEmail,
       homeownerFirstName: homeownerFirstName,
-      chosenInstallation: chosenInstallation,
+      year: year,
+      month: month,
+      day: day,
+      time: time,
       homeStreet: homeStreet,
       homeCity: homeCity,
       totalPrice: totalPrice,
+      cartItems: items,
     };
 
     emailjs.send('service_2sciwag', 'template_74cj89v', templateParams, 'ejHLYsSf4f-mAIKXu')

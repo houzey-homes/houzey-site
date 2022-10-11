@@ -28,8 +28,6 @@ function App() {
      setSelectedYear(year);
      setSelectedMonth(month);
      setSelectedDay(day);
-
-     
      
   };
   
