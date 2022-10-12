@@ -63,6 +63,11 @@ export default function Checkout(props) {
 
     const items = JSON.stringify(cartItems, null, 4);
 
+    let cartReceipt = '';
+    for (let i = 0; i < cartItems.length; i++) {
+      cartReceipt = cartReceipt.concat((i + 1) + ": " + cartItems[i].name + " $" + cartItems[i].price + " Qty: " + cartItems[i].qty + "\n");
+    }
+
     await API.graphql({
       query: createBetaOrder,
       variables: {
@@ -92,7 +97,7 @@ export default function Checkout(props) {
       homeStreet: homeStreet,
       homeCity: homeCity,
       totalPrice: totalPrice,
-      cartItems: items,
+      cartReceipt: cartReceipt,
     };
 
     emailjs.send('service_2sciwag', 'template_74cj89v', templateParams, 'ejHLYsSf4f-mAIKXu')
@@ -129,7 +134,7 @@ export default function Checkout(props) {
         </div>
 
         <div className="InnerCheckoutSection">
-        <h5>Select a date.</h5>
+          <h5>Select a date.</h5>
           <Calendar
             onChange={onChange}
             value={value}
@@ -137,44 +142,44 @@ export default function Checkout(props) {
         </div>
 
         <div className="InnerCheckoutSection">
-              <div className="InstallationsBox">
-                  <h5>Available installations</h5>
+          <div className="InstallationsBox">
+            <h5>Available installations</h5>
 
-                  {(() => {
-                  if (value === '') {
-                    return (
-                      <div className="Installation">No date selected.</div>
-                    )
-                  } else if (availableInstallations.data.listAvailableInstallations.items.length === 0) {
-                    return (
-                      <div className="Installation">No available installations found</div>
-                    )
-                  } else {
-                    return (
-                      availableInstallations.data.listAvailableInstallations.items.map(installation => (
-            
-                        <div className="Installation" key={installation.id} installation={installation}>
-                          
-                          <span>
-                            <label>
-                              {installation.dayOfWeek}: {installation.monthAsWord} {installation.dayAsNumber}, at {installation.timeAsString}
-                            </label>
-                            <input
-                              type="radio"
-                              name="option"
-                              value={installation.startDateTime}
-                              onChange={(e) => setChosenInstallation(e.target.value)}></input>
-                          </span>
-          
-                        </div>
-                      ))
-                    )
-                  } 
-                  })()}
-               
-              </div>
-        </div>       
-         
+            {(() => {
+              if (value === '') {
+                return (
+                  <div className="Installation">No date selected.</div>
+                )
+              } else if (availableInstallations.data.listAvailableInstallations.items.length === 0) {
+                return (
+                  <div className="Installation">No available installations found</div>
+                )
+              } else {
+                return (
+                  availableInstallations.data.listAvailableInstallations.items.map(installation => (
+
+                    <div className="Installation" key={installation.id} installation={installation}>
+
+                      <span>
+                        <label>
+                          {installation.dayOfWeek}: {installation.monthAsWord} {installation.dayAsNumber}, at {installation.timeAsString}
+                        </label>
+                        <input
+                          type="radio"
+                          name="option"
+                          value={installation.startDateTime}
+                          onChange={(e) => setChosenInstallation(e.target.value)}></input>
+                      </span>
+
+                    </div>
+                  ))
+                )
+              }
+            })()}
+
+          </div>
+        </div>
+
         <div className="InnerCheckoutSection">
           <form
             ref={form}
