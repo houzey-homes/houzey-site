@@ -5,12 +5,12 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
+import * as React from "react";
 import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import { Icon } from "@aws-amplify/ui-react";
 export default function MyIcon(props) {
   const { overrides: overridesProp, ...rest } = props;
@@ -337,8 +337,8 @@ export default function MyIcon(props) {
           style: { transform: "translate(4.17%, 12.5%)" },
         },
       ]}
-      {...rest}
       {...getOverrideProps(overrides, "MyIcon")}
+      {...rest}
     ></Icon>
   );
 }

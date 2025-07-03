@@ -5,8 +5,9 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2026-07-02T06:48:56.555Z",
+      "keyDescription": "houzey-api"
     },
     "additionalAuthTypes": [
       {

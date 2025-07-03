@@ -5,8 +5,8 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import * as React from "react";
+import { getOverrideProps } from "./utils";
 import { Button, Flex, Text, TextField } from "@aws-amplify/ui-react";
 export default function HeroLayout4(props) {
   const { overrides, ...rest } = props;
@@ -20,8 +20,8 @@ export default function HeroLayout4(props) {
       position="relative"
       padding="160px 160px 160px 160px"
       backgroundColor="rgba(0,0,0,1)"
-      {...rest}
       {...getOverrideProps(overrides, "HeroLayout4")}
+      {...rest}
     >
       <Flex
         gap="24px"

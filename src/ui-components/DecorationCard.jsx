@@ -5,8 +5,8 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import * as React from "react";
+import { getOverrideProps } from "./utils";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function DecorationCard(props) {
   const { decoration, overrides, ...rest } = props;
@@ -18,8 +18,8 @@ export default function DecorationCard(props) {
       position="relative"
       padding="43px 119px 43px 119px"
       backgroundColor="rgba(255,255,255,1)"
-      {...rest}
       {...getOverrideProps(overrides, "DecorationCard")}
+      {...rest}
     >
       <Flex
         gap="10px"

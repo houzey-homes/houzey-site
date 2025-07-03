@@ -5,8 +5,8 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import * as React from "react";
+import { getOverrideProps } from "./utils";
 import {
   Badge,
   Divider,
@@ -26,8 +26,8 @@ export default function ReviewCard(props) {
       alignItems="center"
       position="relative"
       padding="0px 0px 0px 0px"
-      {...rest}
       {...getOverrideProps(overrides, "ReviewCard")}
+      {...rest}
     >
       <Image
         width="400px"

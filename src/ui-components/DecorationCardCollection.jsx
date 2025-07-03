@@ -5,21 +5,25 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
+import * as React from "react";
 import { Decoration } from "../models";
-import {
-  getOverrideProps,
-  useDataStoreBinding,
-} from "@aws-amplify/ui-react/internal";
+import { getOverrideProps, useDataStoreBinding } from "./utils";
 import DecorationCard from "./DecorationCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function DecorationCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Decoration,
   }).items;
-  const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
+  React.useEffect(() => {
+    if (itemsProp !== undefined) {
+      setItems(itemsProp);
+      return;
+    }
+    setItems(itemsDataStore);
+  }, [itemsProp, itemsDataStore]);
   return (
     <Collection
       type="grid"
@@ -31,8 +35,8 @@ export default function DecorationCardCollection(props) {
       alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
-      {...rest}
       {...getOverrideProps(overrides, "DecorationCardCollection")}
+      {...rest}
     >
       {(item, index) => (
         <DecorationCard

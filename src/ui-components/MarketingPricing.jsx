@@ -5,8 +5,8 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import * as React from "react";
+import { getOverrideProps } from "./utils";
 import { Button, Divider, Flex, Icon, Text, View } from "@aws-amplify/ui-react";
 export default function MarketingPricing(props) {
   const { overrides, ...rest } = props;
@@ -20,8 +20,8 @@ export default function MarketingPricing(props) {
       position="relative"
       padding="24px 24px 24px 24px"
       backgroundColor="rgba(239,240,240,1)"
-      {...rest}
       {...getOverrideProps(overrides, "MarketingPricing")}
+      {...rest}
     >
       <Flex
         gap="24px"

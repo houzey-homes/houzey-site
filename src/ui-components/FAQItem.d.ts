@@ -4,10 +4,28 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-import React from "react";
-import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
+import * as React from "react";
+import { DividerProps, FlexProps, TextProps } from "@aws-amplify/ui-react";
+export declare type EscapeHatchProps = {
+    [elementHierarchy: string]: Record<string, unknown>;
+} | null;
+export declare type VariantValues = {
+    [key: string]: string;
+};
+export declare type Variant = {
+    variantValues: VariantValues;
+    overrides: EscapeHatchProps;
+};
+export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
+export declare type FAQItemOverridesProps = {
+    FAQItem?: PrimitiveOverrideProps<FlexProps>;
+    Container?: PrimitiveOverrideProps<FlexProps>;
+    Content?: PrimitiveOverrideProps<FlexProps>;
+    Title?: PrimitiveOverrideProps<TextProps>;
+    Paragraph?: PrimitiveOverrideProps<TextProps>;
+    Divider?: PrimitiveOverrideProps<DividerProps>;
+} & EscapeHatchProps;
 export declare type FAQItemProps = React.PropsWithChildren<Partial<FlexProps> & {
-    overrides?: EscapeHatchProps | undefined | null;
+    overrides?: FAQItemOverridesProps | undefined | null;
 }>;
 export default function FAQItem(props: FAQItemProps): React.ReactElement;

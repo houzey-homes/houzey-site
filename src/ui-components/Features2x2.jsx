@@ -5,8 +5,8 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import * as React from "react";
+import { getOverrideProps } from "./utils";
 import { Flex, Text } from "@aws-amplify/ui-react";
 export default function Features2x2(props) {
   const { overrides, ...rest } = props;
@@ -20,8 +20,8 @@ export default function Features2x2(props) {
       position="relative"
       padding="40px 160px 40px 160px"
       backgroundColor="rgba(239,240,240,1)"
-      {...rest}
       {...getOverrideProps(overrides, "Features2x2")}
+      {...rest}
     >
       <Flex
         gap="24px"
